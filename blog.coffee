@@ -1,6 +1,7 @@
 core = require('./blog_core')
 express = require('express')
 
+
 app = express.createServer()
 
 app.use require('connect-assets')()
@@ -21,5 +22,6 @@ app.get('/quale_operadora', (req,res) ->
 	res.send('Quale')
 );
 
-app.listen(3000)
+port = process.env.port || 3000;
+app.listen(port)
 console.log('Server running at http://0.0.0.0:3000/')
