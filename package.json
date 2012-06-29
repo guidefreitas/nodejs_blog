@@ -1,0 +1,22 @@
+{
+  "name": "Guilherme Blog",
+  "preferGlobal": "true",
+  "version": "0.1.0",
+  "author": "Guilherme Defreitas Juraszek <guilherme.defreitas@gmail.com>",
+  "description": "Blog simples",
+
+  "main": "./blog",
+
+  "dependencies" : {
+    "jade"   :  "*",
+    "express" :  "*"
+  },
+
+  "bundleDependencies": [
+  ],
+  
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.8"
+  }
+}
