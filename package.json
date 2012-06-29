@@ -1,5 +1,5 @@
 {
-  "name": "Guilherme Blog",
+  "name": "guilherme-blog",
   "preferGlobal": "true",
   "version": "0.1.0",
   "author": "Guilherme Defreitas Juraszek <guilherme.defreitas@gmail.com>",
@@ -9,7 +9,10 @@
 
   "dependencies" : {
     "jade"   :  "*",
-    "express" :  "*"
+    "express" :  "*",
+    "connect-assets" : "*",
+    "less" : "*",
+    "coffee-script" : "*"
   },
 
   "bundleDependencies": [
