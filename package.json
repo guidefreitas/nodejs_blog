@@ -12,7 +12,8 @@
     "express" :  "2.5.x",
     "connect-assets" : "*",
     "less" : "*",
-    "coffee-script" : "*"
+    "coffee-script" : "*",
+    "formidable" : "*"
   },
 
   "bundleDependencies": [
