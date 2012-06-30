@@ -13,7 +13,8 @@
     "connect-assets" : "*",
     "less" : "*",
     "coffee-script" : "*",
-    "formidable" : "*"
+    "formidable" : "*",
+    "zlib" : "*"
   },
 
   "bundleDependencies": [
