@@ -1,1 +1,1 @@
-web: node blog.coffee
+web: node web.coffee
