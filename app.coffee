@@ -25,6 +25,6 @@ app.get('/aplicativos', (req,res) ->
 	res.render('apps/index', { pageTitle: 'Aplicativos' })
 );
 
-port = process.env.port || 3000;
+port = process.env.PORT || 3000;
 app.listen(port)
 console.log('Server running at http://0.0.0.0:3000/')
