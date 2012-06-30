@@ -22,6 +22,7 @@
   
   "license": "MIT",
   "engines": {
-    "node": "0.8.1"
+    "node": "0.8.1",
+    "npm" : "1.1.9"
   }
 }
