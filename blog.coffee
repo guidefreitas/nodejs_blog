@@ -10,16 +10,19 @@ app.set('view engine', 'jade')
 
 
 app.get('/', (req, res) ->
-	core.sayHello()
-	res.render('index', { pageTitle: 'Guilherme Defreitas Juraszek - Blog' })
+	res.render('blog/index', { pageTitle: 'Guilherme Defreitas' })
 )
 
-app.get('/about', (req,res) ->
-	res.send('About')
+app.get('/blog/:id', (req, res) ->
+	res.render('blog/show', { pageTitle: 'Blog' })
 )
 
-app.get('/quale_operadora', (req,res) ->
-	res.send('Quale')
+app.get('/sobre', (req,res) ->
+	res.render('contato/index', { pageTitle: 'Contato' })
+)
+
+app.get('/aplicativos', (req,res) ->
+	res.render('apps/index', { pageTitle: 'Aplicativos' })
 );
 
 port = process.env.port || 3000;

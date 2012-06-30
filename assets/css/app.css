@@ -1,0 +1,328 @@
+@font-face {
+  font-family: 'MuseoSans-700';
+  src: url("http://fonts.coderwall.com/fonts/221897_0_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_0_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_0_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-300';
+  src: url("http://fonts.coderwall.com/fonts/221897_1_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_1_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_1_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_1_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-900Italic';
+  src: url("http://fonts.coderwall.com/fonts/221897_2_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_2_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_2_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_2_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-500';
+  src: url("http://fonts.coderwall.com/fonts/221897_3_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_3_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_3_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_3_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-100';
+  src: url("http://fonts.coderwall.com/fonts/221897_4_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_4_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_4_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_4_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-700Italic';
+  src: url("http://fonts.coderwall.com/fonts/221897_5_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_5_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_5_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_5_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-300Italic';
+  src: url("http://fonts.coderwall.com/fonts/221897_6_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_6_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_6_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_6_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-100Italic';
+  src: url("http://fonts.coderwall.com/fonts/221897_7_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_7_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_7_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_7_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-500Italic';
+  src: url("http://fonts.coderwall.com/fonts/221897_8_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_8_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_8_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_8_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'MuseoSans-900';
+  src: url("http://fonts.coderwall.com/fonts/221897_9_0.eot");
+  src: url("http://fonts.coderwall.com/fonts/221897_9_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_9_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_9_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'ChunkFiveRegular';
+  src: url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.eot");
+  src: url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.woff") format("woff"), url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.ttf") format("truetype"), url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.svg#ChunkFiveRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    color: black;
+}
+
+ul, ol {
+    list-style: none outside none;
+}
+
+h2 {
+    font-family: "MuseoSans-500";
+    font-size: 2.4em;
+}
+
+html {
+  overflow-y: scroll;
+  /* 1 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+  -ms-text-size-adjust: 100%;
+}
+
+
+html,body {
+  height:100%;
+  width:100%;
+  font-size: 10px;
+  line-height: normal;
+  margin: 0;
+  overflow:auto;
+}
+
+
+body,
+input,
+button,
+textarea,
+select {
+  font-family: sans-serif;
+}
+
+body, input, submit, textarea {
+  font-family: "MuseoSans-300", arial, sans-serif;
+}
+
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+a {
+  text-decoration: none;
+}
+
+
+::selection {
+  background: #55a2f7; /* Safari */
+  }
+::-moz-selection {
+  background: #55a2f7; /* Firefox */
+}
+
+
+.site-page a {
+    color: #FFFFFF;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+
+.site-page {
+	background: #393939;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: white;
+  background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #393939;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+
+
+.blur {
+	min-width: 100%;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -2;
+	opacity: 0.7;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 790px;
+	padding-bottom: 100px;
+}
+
+.site-header {
+  margin: 54px 0 30px;
+  border-bottom: solid 1px white;
+  padding-bottom: 15px
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+ 
+}
+
+.site-header ul.menu{
+  padding-top: 8px;
+  vertical-align: left;
+}
+
+.site-header ul.menu li{
+  font-size: 2em;
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.site-header a{
+   -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.site-header a:hover{
+  opacity: 0.5;
+}
+
+.site-page .site-header .site-logo {
+  float: left;
+  width: 500px;
+  height: 31px;
+  display: block;
+  font-size: 3.0em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+.site-page article.blog header {
+    margin-bottom: 25px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+site-page article.blog header h1{
+    margin-bottom: 0px;
+}
+
+.site-page article.blog header ul{
+  padding: 0px
+}
+
+.site-page article.blog header ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-page article.blog header h1{
+  font-size: 2.4em;
+  margin-bottom: 0px;
+}
+
+.site-page article.blog .content h2{
+  font-size: 1.4em;
+  margin-bottom: 0px;
+}
+
+
+.site-page article.blog header a:hover{
+    opacity: 0.5;
+}
+
+.site-page article.blog header a{
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+}
+
+.site-page article.blog header time{
+  font-size: 1.3em;
+}
+
+.site-page article.blog .content a{
+  color: black;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.site-page article.blog .content a:hover{
+  opacity: 0.5;
+}
+
+.site-page article.blog .content ul{
+  padding-left: 0px;
+}
+
+.site-page article.blog .content ul li{
+  margin-bottom: 40px;
+}
+
+
+.site-page article.blog .content section ul{
+  padding-left: 0px;
+}
+
+.site-page article.blog .content section ul li{
+  margin-bottom: 0px;
+}
+
+.content{
+  background: white;
+  color: black;
+  padding: 50px 67px;
+  margin-bottom: 25px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  min-height: 153px;
+  word-wrap: break-word;
+  font-size: 1.6em;
+  line-height: 1.4em;
+  margin-bottom: 1.6em;
+}
+
+
+
+
+#canvasSource{
+  display: none;
+}
