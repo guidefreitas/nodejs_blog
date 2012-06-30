@@ -9,7 +9,7 @@
 
   "dependencies" : {
     "jade"   :  "*",
-    "express" :  "*",
+    "express" :  "2.5.x",
     "connect-assets" : "*",
     "less" : "*",
     "coffee-script" : "*"
@@ -20,6 +20,6 @@
   
   "license": "MIT",
   "engine": {
-    "node": ">=0.8"
+    "node": "0.8.x"
   }
 }
