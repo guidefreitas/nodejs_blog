@@ -1,0 +1,1 @@
+web: node blog.coffee
