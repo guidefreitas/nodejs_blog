@@ -1,7 +1,9 @@
+cfg = require('./config')
+
 exports.sayHello = () -> console.log('Teste 123')
 exports.property = "blue"
 
-databaseUrl = "guidefreitas"; #"username:password@example.com/mydb"
+databaseUrl = cfg.db_database; #"username:password@example.com/mydb"
 collections = ["users", "posts"]
 db = require("mongojs").connect(databaseUrl, collections)
 exports.db = db
