@@ -2,16 +2,16 @@ article
 	header
 	div.content
 		form.login-form(name='login', method='post', action='/login')
-			div
+			fieldset
 				p
-					label Username:
+					label Usuário
 				span
-					input(name='user[username]')
-			div
+					input(name='user[username]', class='text-input')
+			fieldset
 				p
-					label Password:
+					label Senha
 				span
-				input(type='password', name='user[password]')
+				input(type='password', class='text-input', name='user[password]')
 
-			div
-				input(type="submit", name='login', value='Login')
+			fieldset
+				input(type="submit", class='btn_login', name='login', value='Login')

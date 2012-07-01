@@ -320,9 +320,91 @@ site-page article.blog header h1{
   margin-bottom: 1.6em;
 }
 
-
-
-
 #canvasSource{
   display: none;
+}
+
+
+
+.login-form p{
+  margin: 0px;
+}
+
+.login-form fieldset{
+  border: 0px;
+}
+
+.login-form .text-input {
+  width: 200px;
+  height: 20px;
+  font-size: 1em;
+  color: #272822;
+  border: 1px solid #CCC;
+  -webkit-box-shadow: inset 0 1px 0 #EEE,white 0 1px 0;
+  -moz-box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+  box-shadow: inset 0 1px 0 #EEE,white 0 1px 0;
+  display: inline-block;
+  margin: 0;
+  outline: none;
+  background-color: white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.login-form .btn_login{
+  border: 1px solid #CCC;
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 18px;
+  height: 30px;
+  width: 90px;
+  -webkit-box-shadow: 0 1px 0 white;
+  -moz-box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 1px 0 white;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+  background-color: #019AD2;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear,left top,left bottom,from(#33BCEF),to(#019AD2));
+  background-image: -moz-linear-gradient(#33BCEF,#019AD2);
+  background-image: -ms-linear-gradient(#33BCEF,#019AD2);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#33BCEF),color-stop(100%,#019AD2));
+  background-image: -webkit-linear-gradient(#33BCEF,#019AD2);
+  background-image: -o-linear-gradient(#33BCEF,#019AD2);
+  background-image: linear-gradient(#33BCEF,#019AD2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bcef',endColorstr='#019ad2',GradientType=0);
+  border-color: #057ED0;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.login-form .btn_login:active{
+  background-image: none;
+  border-color: #096EB3;
+}
+
+.login-form .btn_login:hover, .btn_login:focus{
+  color: white;
+  background-color: #0271BF;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear,left top,left bottom,from(#2DADDC),to(#0271BF));
+  background-image: -moz-linear-gradient(#2DADDC,#0271BF);
+  background-image: -ms-linear-gradient(#2DADDC,#0271BF);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#2DADDC),color-stop(100%,#0271BF));
+  background-image: -webkit-linear-gradient(#2DADDC,#0271BF);
+  background-image: -o-linear-gradient(#2DADDC,#0271BF);
+  background-image: linear-gradient(#2DADDC,#0271BF);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2daddc',endColorstr='#0271bf',GradientType=0);
+  border-color: #096EB3;
+
 }
