@@ -1,0 +1,17 @@
+article
+	header
+	div.content
+		form.login-form(name='login', method='post', action='/login')
+			div
+				p
+					label Username:
+				span
+					input(name='user[username]')
+			div
+				p
+					label Password:
+				span
+				input(type='password', name='user[password]')
+
+			div
+				input(type="submit", name='login', value='Login')
