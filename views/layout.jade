@@ -2,12 +2,13 @@
 html(lang="en")
 	head
 		title =pageTitle
+		meta(charset='UTF-8')
 		meta(name="apple-mobile-web-app-capable", content="yes")
 		!= css('app')
 		!= js('jquery-1.7.2.min')
 		!= js('app')
 	body.site-page
-
+		img#canvasSource(src='/img/bg2.jpg', witdh="300", height="200")
 		canvas.blur#bgcanvas
 		div.wrapper
 			!=partial('menu')

@@ -24,9 +24,11 @@ $(document).ready(() ->
 	url = '/img/bg2.jpg'
 	image = new Image()
 
+
 	image.onload = ->
 		canvasImage = new CanvasImage(document.getElementById(id), this)
-		canvasImage.blur(4)
+		canvasImage.blur(4)	
+
 	image.src = url
 
 )

@@ -20,6 +20,12 @@ currentUser = (req, res, callback) ->
 	)
 
 app.dynamicHelpers({
+  token: (req, res) ->
+    return req.session._csrf;
+  
+});
+
+app.dynamicHelpers({
 	current_user: (req, res) ->
 		if !req.session.userid
 			return null
