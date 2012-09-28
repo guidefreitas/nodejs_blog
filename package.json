@@ -17,7 +17,8 @@
     "zlib" : "*",
     "mongodb" : ">=1.0.2",
     "mongojs" : ">= 0.4.3",
-    "mongoose" : "*"
+    "mongoose" : "*",
+    "github-flavored-markdown" : "*"
   },
 
   "bundleDependencies": [

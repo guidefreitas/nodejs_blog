@@ -135,6 +135,10 @@ a {
 }
 
 
+fieldset{
+  border: 0px;
+}
+
 ::selection {
   background: #55a2f7; /* Safari */
   }
@@ -320,6 +324,14 @@ site-page article.blog header h1{
   margin-bottom: 1.6em;
 }
 
+.content a{
+  color: #4175c6;
+}
+
+.content a:hover{
+  text-decoration: underline;
+}
+
 #canvasSource{
   display: none;
 }
@@ -353,7 +365,7 @@ site-page article.blog header h1{
   padding: 4px;
 }
 
-.login-form .btn_login{
+.button-normal{
   border: 1px solid #CCC;
   position: relative;
   display: inline-block;
@@ -388,12 +400,12 @@ site-page article.blog header h1{
   border-radius: 5px;
 }
 
-.login-form .btn_login:active{
+.button-normal:active{
   background-image: none;
   border-color: #096EB3;
 }
 
-.login-form .btn_login:hover, .btn_login:focus{
+.button-normal:hover, .button-normal:focus{
   color: white;
   background-color: #0271BF;
   background-repeat: repeat-x;
@@ -407,4 +419,25 @@ site-page article.blog header h1{
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2daddc',endColorstr='#0271bf',GradientType=0);
   border-color: #096EB3;
 
+}
+
+
+#new-post-form #title-field{
+  font-size: 1.8em;
+  border: 0;
+  width: 100%;
+}
+
+#new-post-form #text{
+  font-size: 1.2em;
+  width: 100%;
+  border: 0;
+  width: 100%;
+}
+
+#new-post-form #tags-field{
+  font-size: 1.2em;
+  width: 100%;
+  border: 0;
+  width: 100%;
 }

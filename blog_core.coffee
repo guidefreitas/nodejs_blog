@@ -9,10 +9,20 @@ exports.db = db
 exports.ObjectId = (id) ->
 	new mongoose.Types.ObjectId(id)
 
+
+exports.doDashes = (str) ->
+	return str.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase();
+
 userSchema = mongoose.Schema({ 
-	username: String, 
+	username: {
+		type: String,
+		index: {unique: true}
+	},
 	password: String, 
-	email: String,
+	email: {
+		type: String,
+		index: {unique: true}
+	},
 	admin: Boolean 
 })
 
@@ -20,8 +30,13 @@ userSchema.methods.sayHello = () ->
 	console.log('HELOOO')
 
 postSchema = mongoose.Schema({ 
+	urlid: {
+		type: String,
+		index: {unique: true}
+		},
 	title: String, 
 	body: String,
+	tags: String,
 	date: Date 
 })
 
@@ -53,13 +68,10 @@ User.find({username: 'guilherme'}, (err, users) ->
 
 
 exports.findPosts = () ->
-	Post.find((err,posts) ->
-		if(err || !posts)
-			console.log "No users found"
+	Post.find().exec((err,posts) ->
+		if(err)
+			console.log "Erro:" + err
 		else
-			posts.forEach((post) ->
-				console.log(post)
-			)
 			return posts
 	)
 

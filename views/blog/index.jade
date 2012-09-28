@@ -6,43 +6,18 @@ article.blog
 					a(href='#') Blog
 	
 	div.content
-		ul
-			li
-				section
-					h2 
-						a(href='/blog/1') Using OpenCV 2.4 with Qt
 
+		- if (posts.length == 0)
+			p 'Nenhum post'
+		- else
+			ul
+				- each post in posts
+					li
+						section
+							h2 
+								a(href='/'+post.urlid)!= post.title
 
-					p Artigo de exemplo mostrando as funcionlidades do OpenCV
-					
-						ul
-							li 1. Processamento de Imagens
-							li 2. Geometrias
-							li 3. Escrevendo na tela
-
-			li
-				section
-					h2 
-						a(href='/blog/1') Using OpenCV 2.4 with Qt
-
-
-					p Artigo de exemplo mostrando as funcionlidades do OpenCV
-					
-						ul
-							li 1. Processamento de Imagens
-							li 2. Geometrias
-							li 3. Escrevendo na tela
-
-
-			li
-				section
-					h2 
-						a(href='/blog/1') Using OpenCV 2.4 with Qt
-
-
-					p Artigo de exemplo mostrando as funcionlidades do OpenCV
-					
-						ul
-							li 1. Processamento de Imagens
-							li 2. Geometrias
-							li 3. Escrevendo na tela
+							p!= md.parse(post.body)
+								
+								
+									

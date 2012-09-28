@@ -1,5 +1,17 @@
 article
 	header
 	div.content
-		input(type='hidden', value=token)
-		p New Post
+		- if (notice)
+			p =notice
+
+		form#new-post-form(name='login', method='post', action='/admin/posts')
+			input(type='hidden', value=token)
+			fieldset.input-field
+				input#title-field(name='post[title]', placeholder='Title', type='text', size='40')
+			fieldset.input-field
+				textarea#text(name='post[body]', placeholder='Text', type='text', cols='40', rows='20')
+			fieldset.input-field
+				input#tags-field(name='post[tags]', placeholder='Tags', type='text')
+			
+			fieldset
+				input(type="submit", class='button-normal', name='save', value='Save')

@@ -1,5 +1,6 @@
 core = require('./blog_core')
 express = require('express')
+ghm = require("github-flavored-markdown")
 
 app = express.createServer()
 
@@ -56,13 +57,17 @@ andIsAdmin = (req, res, next) ->
 		
 
 
+app.helpers({ notice: false })
+app.helpers({ md: ghm })
 
 app.get('/', (req, res) ->
-	res.render('blog/index', { pageTitle: 'Guilherme Defreitas' })
-)
-
-app.get('/blog/:id', (req, res) ->
-	res.render('blog/show', { pageTitle: 'Blog' })
+	posts = core.Post.find().sort('-date').exec((err,posts) ->
+		if(!err)
+			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: posts })	
+		else
+			res.render('500', { pageTitle: 'Oops' })
+	)
+	
 )
 
 app.get('/sobre', (req,res) ->
@@ -111,16 +116,52 @@ app.get('/admin', andIsAdmin, (req,res) ->
 );
 
 app.get('/admin/posts', andIsAdmin, (req,res) ->
-	res.render('posts/index', { pageTitle: 'Posts', layout: 'admin_layout' })
+	res.render('admin/posts/index', { pageTitle: 'Posts', layout: 'admin_layout' })
 );
 
+app.post('/admin/posts', andIsAdmin, (req,res) ->
+	title = req.body.post.title
+	body = req.body.post.body
+	tags = req.body.post.tags.split(',')
+	urlid = core.doDashes(title)
+	post = new core.Post({
+			title: title,
+			body: body,
+			urlid: urlid,
+			date: new Date()			
+		})
+
+	post.save((err) ->
+		if(err)
+			res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout', notice: 'Erro ao salvar' })
+		else
+			res.redirect('/admin/posts')				
+	)
+)
+
 app.get('/admin/posts/new', andIsAdmin, (req,res) ->
-	res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout' })
+	res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout', notice: '' })
 );
 
 app.get('/admin/posts/edit/:id', andIsAdmin, (req,res) ->
 	res.render('posts/edit', { pageTitle: 'New Post', layout: 'admin_layout' })
 );
+
+
+app.get('/:id', (req, res) ->
+	urlid = req.params.id
+	post = core.Post.findOne({urlid: urlid}).exec((err, post) ->
+		if(!err)
+			if(post)
+				res.render('blog/show', { pageTitle: post.title, post: post })			
+			else
+				res.render('404', { pageTitle: 'Not Found :(' })
+		else
+			res.render('500', { pageTitle: 'Oops' })		
+	)
+	
+)
+
 
 app.get('*', (req, res) ->
 	res.render('404', { pageTitle: 'Not Found :(' })

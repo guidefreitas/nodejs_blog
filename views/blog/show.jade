@@ -1,13 +1,5 @@
 article.blog
 	div.content
 		section
-			h2 
-				a(href='#') Using OpenCV 2.4 with Qt
-
-
-			p Artigo de exemplo mostrando as funcionlidades do OpenCV
-			
-				ul
-					li 1. Processamento de Imagens
-					li 2. Geometrias
-					li 3. Escrevendo na tela
+			h2= post.title
+			p!= md.parse(post.body)
