@@ -16,7 +16,8 @@
     "formidable" : "*",
     "zlib" : "*",
     "mongodb" : ">=1.0.2",
-    "mongojs" : ">= 0.4.3"
+    "mongojs" : ">= 0.4.3",
+    "mongoose" : "*"
   },
 
   "bundleDependencies": [
