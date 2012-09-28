@@ -61,10 +61,6 @@ app.get('/', (req, res) ->
 	res.render('blog/index', { pageTitle: 'Guilherme Defreitas' })
 )
 
-app.get('/blog/new', (req, res) ->
-	res.render('blog/new', {pageTitle: 'New Post'})
-)
-
 app.get('/blog/:id', (req, res) ->
 	res.render('blog/show', { pageTitle: 'Blog' })
 )
