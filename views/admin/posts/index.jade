@@ -10,6 +10,7 @@ article
 			ul
 				- each post in posts
 					li
-						h2!= post.title
+						h2
+							a(href='/admin/posts/' + post._id)!= post.title
 						div.meta
 							!= moment(post.date).format('LL')

@@ -7,6 +7,7 @@ moment.lang('pt-br');
 app = express.createServer()
 
 app.use(express.bodyParser());
+app.use(express.methodOverride());
 app.use(express.cookieParser());
 app.use(express.session({ secret: "keyboard cat" }));
 
@@ -151,16 +152,80 @@ app.post('/admin/posts', andIsAdmin, (req,res) ->
 				res.redirect('/admin/posts')				
 		)
 	)
-
-	
 )
 
 app.get('/admin/posts/new', andIsAdmin, (req,res) ->
-	res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout', notice: '' })
+	post = new core.Post()
+	res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout', post:post })
 );
 
+app.get('/admin/posts/:id', andIsAdmin, (req,res) ->
+	core.Post.findOne({_id : core.ObjectId(req.params.id)}).exec((err,post) ->
+		if(err)
+			res.render('500', { pageTitle: 'Oops' })
+		if(!post)
+			res.render('404', { pageTitle: 'Not Found :(' })
+
+		res.render('admin/posts/show', { pageTitle: 'New Post', layout: 'admin_layout', post:post })
+
+	)
+	
+);
+
+app.put('/admin/posts/:id', andIsAdmin, (req, res) ->
+	title = req.body.post.title
+	body = req.body.post.body
+	tags = req.body.post.tags.split(',')
+	urlid = core.doDashes(title)
+	core.Post.findOne({_id:core.ObjectId(req.params.id)}).exec((err,post) ->
+		if(err)
+			res.render('500', { pageTitle: 'Oops' })
+		if(!post)
+			res.render('404', { pageTitle: 'Not Found :(' })
+
+		post.title = title
+		post.body = body
+		post.tags = tags
+		post.urlid = urlid
+		post.save((err) ->
+			if(err)
+				res.render('posts/edit', { pageTitle: 'New Post', layout: 'admin_layout', post:post })
+			else
+				res.redirect('/admin/posts')
+		)
+
+
+	)
+)
+
+app.del('/admin/posts/:id', andIsAdmin, (req, res) ->
+	core.Post.findOne({_id : core.ObjectId(req.params.id)}).exec((err,post) ->
+		if(err)
+			res.render('500', { pageTitle: 'Oops' })
+		if(!post)
+			res.render('404', { pageTitle: 'Not Found :(' })
+
+		post.remove((err) ->
+			if(!err)
+				res.redirect('/admin/posts')	
+		)
+		
+	)
+)
+
+
+
 app.get('/admin/posts/edit/:id', andIsAdmin, (req,res) ->
-	res.render('posts/edit', { pageTitle: 'New Post', layout: 'admin_layout' })
+	core.Post.findOne({_id : core.ObjectId(req.params.id)}).exec((err,post) ->
+		if(err)
+			res.render('500', { pageTitle: 'Oops' })
+		if(!post)
+			res.render('404', { pageTitle: 'Not Found :(' })
+
+		res.render('posts/edit', { pageTitle: 'New Post', layout: 'admin_layout', post:post })
+
+	)
+	
 );
 
 

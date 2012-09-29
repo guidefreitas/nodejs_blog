@@ -339,6 +339,13 @@ site-page article.blog header h1{
   text-decoration: none;
 }
 
+section.post img{
+  max-width: 450px;
+  margin: 10px auto;
+  display: inline-block;
+  position: relative;
+}
+
 #canvasSource{
   display: none;
 }
