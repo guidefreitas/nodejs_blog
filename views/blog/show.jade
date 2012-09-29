@@ -1,5 +1,7 @@
 article.blog
 	div.content
-		section
+		section.post
 			h2= post.title
+			p.meta
+				| 28 de setembro, 2012
 			p!= md.parse(post.body)

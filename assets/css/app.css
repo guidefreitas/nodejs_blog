@@ -421,6 +421,15 @@ site-page article.blog header h1{
 
 }
 
+.post .meta{
+  font-size: 0.8em;
+  color: #AAA;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #EBEBEB;
+  position: relative;
+  margin-bottom: 22px;
+}
 
 #new-post-form #title-field{
   font-size: 1.8em;
