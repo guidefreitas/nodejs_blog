@@ -234,6 +234,10 @@ a:active {
   display: none;
 }
 
+article#sobre #search-form{
+  margin-bottom: 20px;
+}
+
 #search-form #search-field{
   color: rgba(255,255,255, 0.9);
   background: transparent;
