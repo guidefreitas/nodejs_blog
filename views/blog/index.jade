@@ -5,19 +5,19 @@ article.blog
 				h1 
 					a(href='#') Blog
 	
-	div.content
+	
 
-		- if (posts.length == 0)
+	- if (posts.length == 0)
+		div.content
 			p 'Nenhum post'
-		- else
-			ul
-				- each post in posts
-					li
-						section
-							h2 
-								a(href='/'+post.urlid)!= post.title
+	- else
+		- each post in posts
+			div.content
+				section
+					h2 
+						a(href='/'+post.urlid)!= post.title
 
-							p!= md.parse(post.body)
+					p!= md.parse(post.body)
 								
 								
 									

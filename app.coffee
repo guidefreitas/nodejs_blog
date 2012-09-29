@@ -1,6 +1,8 @@
 core = require('./blog_core')
 express = require('express')
 ghm = require("github-flavored-markdown")
+moment = require('moment')
+moment.lang('pt-br');
 
 app = express.createServer()
 
@@ -12,6 +14,9 @@ app.use require('connect-assets')()
 app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'jade')
 
+app.helpers({ notice: false })
+app.helpers({ md: ghm })
+app.helpers({moment : moment})
 
 currentUser = (req, res, callback) ->
 	core.findOneUser({_id : core.ObjectId(req.session.userid)}, (err, user) ->
@@ -57,8 +62,7 @@ andIsAdmin = (req, res, next) ->
 		
 
 
-app.helpers({ notice: false })
-app.helpers({ md: ghm })
+
 
 app.get('/', (req, res) ->
 	posts = core.Post.find().sort('-date').exec((err,posts) ->

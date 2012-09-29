@@ -322,6 +322,9 @@ site-page article.blog header h1{
   font-size: 1.6em;
   line-height: 1.4em;
   margin-bottom: 1.6em;
+  -webkit-box-shadow: 0px 0px 10px rgba(0,0,0, 0.8);
+  -moz-box-shadow: 0px 0px 10px rgba(0,0,0, 0.8);
+  box-shadow: 0px 0px 10px rgba(0,0,0, 0.8);
 }
 
 .content a{
@@ -337,6 +340,10 @@ site-page article.blog header h1{
 }
 
 
+.login-form{
+  width: 250px;
+  margin: auto;
+}
 
 .login-form p{
   margin: 0px;
@@ -366,6 +373,7 @@ site-page article.blog header h1{
 }
 
 .button-normal{
+  font-family: "Helvetica Neues", Helvetica, arial, sans-serif;
   border: 1px solid #CCC;
   position: relative;
   display: inline-block;
