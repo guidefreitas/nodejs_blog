@@ -4,4 +4,6 @@ article.blog
 			h2= post.title
 			p.meta
 				| 28 de setembro, 2012
+				a.author(href='/about#jon')
+					img(src='/img/about/gui.png', width='68', height='68')
 			p!= md.parse(post.body)
