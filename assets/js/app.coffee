@@ -31,4 +31,18 @@ $(document).ready(() ->
 
 	image.src = url
 
+	$('#search-button').click(() ->
+		$('#search-form').slideDown('fast', () ->
+			$('#search-field').focus();
+		)
+	)
+	
+	$('#search-field').blur(() ->
+		if($(this).val() == "")
+			$('#search-form').slideUp('fast', () ->
+				
+			)
+	)
+    
+
 )

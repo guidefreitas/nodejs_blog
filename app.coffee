@@ -75,6 +75,17 @@ app.get('/', (req, res) ->
 	
 )
 
+app.get('/search',(req, res) ->
+	query = new RegExp(req.query["q"], 'i')
+	
+	core.Post.find({ $or : [ { title : query } , { body : query } ] }).sort('-date').exec((err, posts) ->
+		if(err)
+			res.render('500', { pageTitle: 'Oops' })
+		else
+			res.render('blog/index', { pageTitle: 'Busca', posts: posts })
+	)
+)
+
 app.get('/sobre', (req,res) ->
 	res.render('contato/index', { pageTitle: 'Contato' })
 )

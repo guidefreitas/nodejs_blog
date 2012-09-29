@@ -1,5 +1,7 @@
 article.blog
 	header
+		form#search-form(name='post', method='get', action='/search')
+			input#search-field(name='q', placeholder='Search', type='text', size='20')
 		ul
 			li 
 				h1 
@@ -9,7 +11,7 @@ article.blog
 
 	- if (posts.length == 0)
 		div.content
-			p 'Nenhum post'
+			p Nenhum post encontrado
 	- else
 		- each post in posts
 			div.content
