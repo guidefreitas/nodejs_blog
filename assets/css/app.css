@@ -335,6 +335,10 @@ site-page article.blog header h1{
   text-decoration: underline;
 }
 
+.content h2 a:hover{
+  text-decoration: none;
+}
+
 #canvasSource{
   display: none;
 }
