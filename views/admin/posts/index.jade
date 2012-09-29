@@ -1,7 +1,15 @@
 article
 	header
-	div.content
+	div#admin-posts.content
 		- if (notice)
 			p =notice
 
 		a(href='/admin/posts/new') New post
+
+		div.posts-list
+			ul
+				- each post in posts
+					li
+						h2!= post.title
+						div.meta
+							!= moment(post.date).format('LL')

@@ -13,10 +13,11 @@ article.blog
 	- else
 		- each post in posts
 			div.content
-				section
+				section.post
 					h2 
 						a(href='/'+post.urlid)!= post.title
-
+					p.meta
+						!= moment(post.date).format('LL')
 					p!= md.parse(post.body)
 								
 								

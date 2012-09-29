@@ -65,7 +65,7 @@ andIsAdmin = (req, res, next) ->
 
 
 app.get('/', (req, res) ->
-	posts = core.Post.find().sort('-date').exec((err,posts) ->
+	core.Post.find().sort('-date').exec((err,posts) ->
 		if(!err)
 			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: posts })	
 		else
@@ -120,7 +120,12 @@ app.get('/admin', andIsAdmin, (req,res) ->
 );
 
 app.get('/admin/posts', andIsAdmin, (req,res) ->
-	res.render('admin/posts/index', { pageTitle: 'Posts', layout: 'admin_layout' })
+	core.Post.find().sort('-date').exec((err,posts) ->
+		if(!err)
+			res.render('admin/posts/index', { pageTitle: 'Posts', layout: 'admin_layout', posts: posts })	
+		else
+			res.render('500', { pageTitle: 'Oops' })
+	)
 );
 
 app.post('/admin/posts', andIsAdmin, (req,res) ->

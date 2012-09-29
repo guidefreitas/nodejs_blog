@@ -540,3 +540,19 @@ site-page article.blog header h1{
   border: 0;
   width: 100%;
 }
+
+#admin-posts .posts-list ul{
+  padding: 0px;
+}
+
+#admin-posts .posts-list h2{
+  font-size: 1.2em;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#admin-posts .posts-list .meta{
+  font-size: 0.8em;
+  color: #AAA;
+}
+
