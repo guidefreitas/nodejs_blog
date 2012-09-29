@@ -4,7 +4,7 @@ config = require('./config')
 remoteDbUrl = 'mongodb://heroku:5bw313@alex.mongohq.com:10085/app5635522'
 localDbUrl = 'mongodb://localhost/blog'
 
-db = mongoose.createConnection(remoteDbUrl)
+db = mongoose.createConnection(localDbUrl)
 exports.db = db
 exports.ObjectId = (id) ->
 	new mongoose.Types.ObjectId(id)

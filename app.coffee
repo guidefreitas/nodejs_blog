@@ -137,19 +137,19 @@ app.post('/admin/posts', andIsAdmin, (req,res) ->
 	core.Post.findOne({urlid : urlid}).exec((err, post) ->
 		if(post)
 			urlid = urlid + '-' + moment().format('DD-MM-YYYY-HH:mm')
-			post = new core.Post({
-				title: title,
-				body: body,
-				urlid: urlid,
-				date: new Date()			
-			})
+		post = new core.Post({
+			title: title,
+			body: body,
+			urlid: urlid,
+			date: new Date()			
+		})
 
-			post.save((err) ->
-				if(err)
-					res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout', notice: 'Erro ao salvar' })
-				else
-					res.redirect('/admin/posts')				
-			)
+		post.save((err) ->
+			if(err)
+				res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout', notice: 'Erro ao salvar' })
+			else
+				res.redirect('/admin/posts')				
+		)
 	)
 
 	
