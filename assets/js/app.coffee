@@ -52,15 +52,19 @@ $(document).ready(() ->
 			dataType: "json",
 			beforeSend: () ->
 				#alert('before')
-				$('.contact-form').fadeOut()
 			,
 			error: (jqXHR, textStatus, errorThrown) ->
-				$('#contact-form-area').html("<div id='contact-message'><p>Ocorreu um problema ao enviar a mensagem, por favor tente novamente mais tarde ou envie um email diretamente para guilherme.defreitas@gmail.com.</p><p>Obrigado!</p></div>")
-				$('#contact-message').fadeIn()
+				$('.contact-form').fadeOut(() ->
+					$('#contact-form-area').html("<div id='contact-message'><p>Ocorreu um problema ao enviar a mensagem, por favor tente novamente mais tarde ou envie um email diretamente para guilherme.defreitas@gmail.com.</p><p>Obrigado!</p></div>")
+					$('#contact-message').fadeIn()	
+				)
+				
 			,
 			success: (data) ->
-				$('#contact-form-area').html("<div id='contact-message'><p>Mensagem enviada com sucesso. Obrigado!</p></div>")
-				$('#contact-message').fadeIn()
+				$('.contact-form').fadeOut(() ->
+					$('#contact-form-area').html("<div id='contact-message'><p>Mensagem enviada com sucesso. Obrigado!</p></div>")
+					$('#contact-message').fadeIn()
+				)
 		})
 		event.preventDefault()
 	)
