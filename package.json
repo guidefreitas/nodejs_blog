@@ -20,9 +20,7 @@
     "mongoose" : "*",
     "github-flavored-markdown" : "*",
     "moment" : "*",
-    "rss" : "*",
-    "nodemailer" : "*",
-    "email-templates" : "*"
+    "rss" : "*"
   },
 
   "bundleDependencies": [
