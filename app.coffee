@@ -18,6 +18,7 @@ app.set('view engine', 'jade')
 app.helpers({ notice: false })
 app.helpers({ md: ghm })
 app.helpers({moment : moment})
+app.helpers({TrimStr : core.TrimStr })
 
 currentUser = (req, res, callback) ->
 	core.findOneUser({_id : core.ObjectId(req.session.userid)}, (err, user) ->
@@ -76,14 +77,25 @@ app.get('/', (req, res) ->
 )
 
 app.get('/search',(req, res) ->
-	query = new RegExp(req.query["q"], 'i')
+
+	tag = req.query["tag"]
+	if(tag)
+		query = new RegExp(tag, 'i')
+		core.Post.where('tags', query).sort('-date').exec((err,posts) ->
+			if(err)
+				res.render('500', { pageTitle: 'Oops' })
+			else
+				res.render('blog/index', { pageTitle: 'Busca', posts: posts })
+		)
+	else
+		query = new RegExp(req.query["q"], 'i')
 	
-	core.Post.find({ $or : [ { title : query } , { body : query } ] }).sort('-date').exec((err, posts) ->
-		if(err)
-			res.render('500', { pageTitle: 'Oops' })
-		else
-			res.render('blog/index', { pageTitle: 'Busca', posts: posts })
-	)
+		core.Post.find({ $or : [ { title : query } , { body : query } ] }).sort('-date').exec((err, posts) ->
+			if(err)
+				res.render('500', { pageTitle: 'Oops' })
+			else
+				res.render('blog/index', { pageTitle: 'Busca', posts: posts })
+		)
 )
 
 app.get('/sobre', (req,res) ->

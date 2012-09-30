@@ -88,3 +88,7 @@ exports.findOneUser = (args, callback) ->
 	User.findOne(args, (err, user) ->
 		callback(err, user)
 	)
+
+#UTILS
+exports.TrimStr = (str) ->
+	return str.replace(/^\s+|\s+$/g,"")

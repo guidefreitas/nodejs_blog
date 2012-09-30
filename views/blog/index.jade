@@ -19,7 +19,12 @@ article.blog
 						a(href='/'+post.urlid)!= post.title
 					p.meta
 						!= moment(post.date).format('LL')
+						
+					!= partial('post_tags', {post : post})
+
 					p!= md.parse(post.body)
-								
+
+
+									
 								
 									

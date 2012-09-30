@@ -562,6 +562,46 @@ section.post img{
   margin-bottom: 22px;
 }
 
+.post div.tags-tab{
+  display: block;
+  padding-bottom: 40px;
+}
+
+.post ul.tags li{
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.post ul.tags li a{
+  color: #343131;
+  display: block;
+  background: url(../img/tag.png) no-repeat 5px center;
+  font-size: 0.8em;
+  font-family: "MuseoSans-500";
+  padding: 0 15px 0 25px;
+  height: 25px;
+  line-height: 25px;
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.post ul.tags li:hover{
+  opacity: 1;
+}
+
+.post ul.tags li a:hover{
+  text-decoration: none;
+  color: #858585;
+  
+}
+
 #new-post-form #title-field{
   font-size: 1.8em;
   border: 0;

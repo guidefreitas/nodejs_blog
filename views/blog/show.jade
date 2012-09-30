@@ -9,4 +9,6 @@ article.blog
 				!= moment(post.date).format('LL')
 				a.author(href='/sobre')
 					img(src='/img/about/gui.png', width='68', height='68')
+			!= partial('post_tags', {post : post})
 			p!= md.parse(post.body)
+
