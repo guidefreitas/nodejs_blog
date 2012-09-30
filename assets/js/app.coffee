@@ -43,6 +43,9 @@ $(document).ready(() ->
 				
 			)
 	)
-    
+	$('.contact-form').submit(() ->
+		$('#contact-form-area').html("<div class='contact-success'><p>Mensagem enviada com sucesso. Obrigado!</p></div>")
+		return false;
+	)
 
 )
