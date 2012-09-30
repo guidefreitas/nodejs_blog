@@ -19,7 +19,8 @@
     "mongojs" : ">= 0.4.3",
     "mongoose" : "*",
     "github-flavored-markdown" : "*",
-    "moment" : "*"
+    "moment" : "*",
+    "rss" : "*"
   },
 
   "bundleDependencies": [

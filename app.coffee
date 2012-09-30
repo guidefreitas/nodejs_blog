@@ -2,6 +2,7 @@ core = require('./blog_core')
 express = require('express')
 ghm = require("github-flavored-markdown")
 moment = require('moment')
+RSS = require('rss')
 moment.lang('pt-br');
 
 app = express.createServer()
@@ -96,6 +97,36 @@ app.get('/search',(req, res) ->
 			else
 				res.render('blog/index', { pageTitle: 'Busca', posts: posts })
 		)
+)
+
+app.get('/rss.xml', (req, res) ->
+	
+
+	feed = new RSS({
+        title: 'Guilherme Defreitas Blog',
+        description: 'Guilherme Defreitas Blog',
+        feed_url: 'http://guidefreitas.com/rss.xml',
+        site_url: 'http://guidefreitas.com',
+        image_url: 'http://guidefreitas.com/icon.png',
+        author: 'Guilherme Defreitas Juraszek'
+    })
+
+	core.Post.find().exec((err,posts) ->
+		if(err)
+			res.render('500', { pageTitle: 'Oops' })
+		else
+			posts.map (post) ->
+				feed.item({
+            		title:  post.title,
+            		url: 'http://guidefreitas.com/' + post.urlid          
+        		})
+        	res.contentType("rss")
+			res.send(feed.xml());
+
+
+	)
+
+	
 )
 
 app.get('/sobre', (req,res) ->
