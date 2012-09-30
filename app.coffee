@@ -129,7 +129,7 @@ app.get('/rss.xml', (req, res) ->
 	
 )
 
-app.get('/sobre', (req,res) ->
+app.get('/about', (req,res) ->
 	res.render('contato/index', { pageTitle: 'Contato' })
 )
 

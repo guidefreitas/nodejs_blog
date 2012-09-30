@@ -1,7 +1,50 @@
-article#sobre
+article#about
 	header
 		!=partial('search_field')
 
-	div.content
-		h1 
-			a(href='#') Contato
+	div#about-profile-area
+		div.profile
+			div#image
+				img.profile-image(src='/img/about/gui.png')
+			div.profile-description
+				p Blabla bla bal bala
+				ul.social
+					li 
+						a(href='#')
+							img(src='/img/icons/facebook.png')
+					li 
+						a(href='#')
+							img(src='/img/icons/twitter.png')
+					li 
+						a(href='#')
+							img(src='/img/icons/linkedin.png')
+					li 
+						a(href='#')
+							img(src='/img/icons/github.png')
+					li 
+						a(href='#')
+							img(src='/img/icons/skype.png')
+
+		div.contact
+			form
+
+	div#contact-form-area
+		form.contact-form(name='contact', method='post', action='/contactmessage')
+			fieldset
+				label Nome
+				span
+					input(name='contact[name]', class='text-input')
+			fieldset
+				label Email	
+				span
+					input(name='contact[email]', class='text-input')
+
+
+
+			fieldset
+				label Mensagem	
+				span
+					textarea#text(name='post[body]', placeholder='', type='text', cols='40', rows='6')
+
+			fieldset
+				input(type="submit", class='button-normal', name='send', value='Enviar')
