@@ -133,6 +133,13 @@ app.get('/about', (req,res) ->
 	res.render('contato/index', { pageTitle: 'Contato' })
 )
 
+app.post('/about/message', (req,res) ->
+	
+	#res.json(['OK'])
+	res.send(500, { error: '' })
+
+)
+
 app.get('/aplicativos', (req,res) ->
 	res.render('apps/index', { pageTitle: 'Aplicativos' })
 );

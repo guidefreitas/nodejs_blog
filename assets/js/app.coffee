@@ -44,8 +44,23 @@ $(document).ready(() ->
 			)
 	)
 	$('.contact-form').submit(() ->
-		$('#contact-form-area').html("<div class='contact-success'><p>Mensagem enviada com sucesso. Obrigado!</p></div>")
-		return false;
+		
+		$.ajax({
+			type: "POST",
+			url: "/about/message",
+			data: 'nome=guilherme',
+			dataType: "json",
+			beforeSend: () ->
+				#alert('before')
+			,
+			error: (jqXHR, textStatus, errorThrown) ->
+				$('#contact-form-area').html("<div class='contact-success'><p>Ocorreu um problema ao enviar a mensagem, por favor tente novamente mais tarde ou envie um email diretamente para guilherme.defreitas@gmail.com.</p><p>Obrigado!</p></div>")
+			,
+			success: (data) ->
+				$('#contact-form-area').html("<div class='contact-success'><p>Mensagem enviada com sucesso. Obrigado!</p></div>")
+		
+		})
+		event.preventDefault()
 	)
 
 )
