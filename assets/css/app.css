@@ -764,3 +764,7 @@ article#about #contact-footer{
 #admin-messages .messages-list p{
   margin: 2px;
 }
+
+#admin-messages #contact-message{
+  display: none;
+}
