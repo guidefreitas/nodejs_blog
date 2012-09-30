@@ -40,11 +40,20 @@ postSchema = mongoose.Schema({
 	date: Date 
 })
 
+messageSchema = mongoose.Schema({ 
+	name: String,
+	email: String, 
+	body: String,
+	date: Date 
+})
+
 User = db.model('User', userSchema)
 Post = db.model('Post', postSchema)
+Message = db.model('Message', messageSchema)
 
 exports.Post = Post
 exports.User = User
+exports.Message = Message
 
 User.find({username: 'guilherme'}, (err, users) ->
 	if(!err && users.length == 0)

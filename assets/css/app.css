@@ -739,3 +739,28 @@ article#about #contact-footer{
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
+#admin-messages h1{
+  font-size: 1.4em;
+}
+
+#admin-messages .messages-list ul{
+  padding: 0px;
+}
+
+#admin-messages .messages-list ul li{
+  margin-bottom: 10px;
+}
+
+#admin-messages .messages-list h2{
+  font-size: 1em;
+  margin: 0px;
+}
+
+#admin-messages .messages-list .meta{
+  font-size: 0.8em;
+  color: #AAA;
+}
+
+#admin-messages .messages-list p{
+  margin: 2px;
+}

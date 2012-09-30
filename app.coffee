@@ -20,6 +20,7 @@ app.helpers({ notice: false })
 app.helpers({ md: ghm })
 app.helpers({moment : moment})
 app.helpers({TrimStr : core.TrimStr })
+app.helpers({pageTitle : 'Guilherme Defreitas' })
 
 currentUser = (req, res, callback) ->
 	core.findOneUser({_id : core.ObjectId(req.session.userid)}, (err, user) ->
@@ -134,10 +135,22 @@ app.get('/about', (req,res) ->
 )
 
 app.post('/about/message', (req,res) ->
-	
-	#res.json(['OK'])
-	res.send(500, { error: '' })
+	name = req.body.name
+	email = req.body.email
+	body = req.body.message
+	message = new core.Message({
+		name: name,
+		email: email,
+		body: body,
+		date: new Date()			
+	})
 
+	message.save((err) ->
+		if(err)
+			res.send(500, { error: '' })
+		else
+			res.json(['OK'])				
+	)
 )
 
 app.get('/aplicativos', (req,res) ->
@@ -288,6 +301,15 @@ app.get('/admin/posts/edit/:id', andIsAdmin, (req,res) ->
 	)
 	
 );
+
+app.get('/admin/messages', andIsAdmin, (req, res) ->
+	core.Message.find().exec((err, messages) ->
+		if(err)
+			res.render('500', { pageTitle: 'Oops' })
+		else
+			res.render('admin/messages/index', layout: 'admin_layout', messages:messages)
+	)
+)
 
 
 app.get('/:id', (req, res) ->

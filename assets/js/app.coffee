@@ -48,7 +48,7 @@ $(document).ready(() ->
 		$.ajax({
 			type: "POST",
 			url: "/about/message",
-			data: 'nome=guilherme',
+			data: $('.contact-form').serialize(),
 			dataType: "json",
 			beforeSend: () ->
 				#alert('before')
