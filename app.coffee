@@ -153,12 +153,8 @@ app.post('/about/message', (req,res) ->
 	)
 )
 
-app.get('/aplicativos', (req,res) ->
-	res.render('apps/index', { pageTitle: 'Aplicativos' })
-);
-
-app.get('/aplicativos/:id', (req,res) ->
-	res.render('apps/show', { pageTitle: 'Aplicativos' })
+app.get('/projects', (req,res) ->
+	res.render('projects/index', { pageTitle: 'Aplicativos' })
 );
 
 app.get('/media', andIsAdmin, (req,res) ->

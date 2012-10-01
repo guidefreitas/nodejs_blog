@@ -258,7 +258,7 @@ article#about #search-form{
 
 .site-page .site-header .site-logo {
   float: left;
-  width: 490px;
+  width: 470px;
   height: 31px;
   display: block;
   font-size: 3.0em;
@@ -638,15 +638,14 @@ section.post img{
 }
 
 #about-profile-area{
-  padding: 0px;
-  min-height: 200px;
+  padding: 0px 20px 0px 0px;
+  min-height: 310px;
   background: white;
   color: black;
   -webkit-border-radius: 3px 3px 0px 0px;
   -moz-border-radius: 3px 3px 0px 0px;
   border-radius: 3px 3px 0px 0px;
   position: relative;
-  min-height: 200px;
   word-wrap: break-word;
   font-size: 1.6em;
   line-height: 1.4em;
@@ -659,6 +658,12 @@ section.post img{
 #about-profile-area #image{
   float:left;
   margin-right: 20px;
+  padding-bottom: 110px;
+}
+
+#about-profile-area .areas-interesse li{ 
+  padding-left: 150px;
+
 }
 
 #about-profile-area .profile-image{
@@ -669,16 +674,24 @@ section.post img{
   padding-top: 10px;
 }
 
+#about-profile-area .profile-description ul.social{
+  display: block;
+}
+
 #about-profile-area .profile-description ul.social li{
   float: left;
 }
 
-#about-profile-area .profile-description ul.social li img{
+.social-icon{
   opacity: 0.8;
 }
 
+.social-icon:hover{
+  opacity: 0.5;    
+}
+
 article#about #contact-form-area{
-  padding: 20px;
+  padding: 50px 20px 20px;
   background: #F5F5F5;
   margin-top: -22px;
   margin-left: 170px;
@@ -767,4 +780,8 @@ article#about #contact-footer{
 
 #admin-messages #contact-message{
   display: none;
+}
+
+article#projects #search-form{
+  margin-bottom: 20px;
 }
