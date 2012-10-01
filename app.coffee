@@ -212,6 +212,7 @@ app.post('/admin/posts', andIsAdmin, (req,res) ->
 			title: title,
 			body: body,
 			urlid: urlid,
+			tags : tags,
 			date: new Date()			
 		})
 
