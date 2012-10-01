@@ -324,7 +324,8 @@ app.get('/:id', (req, res) ->
 
 
 app.get('*', (req, res) ->
-	res.render('404', { pageTitle: 'Not Found :(' })
+	#res.render('404', { pageTitle: 'Not Found :(' })
+	res.redirect('/')
 );
 
 port = process.env.PORT || 3000;
