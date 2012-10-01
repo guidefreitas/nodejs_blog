@@ -1,12 +1,27 @@
 header.site-header
 	a.site-logo(href='/') Guilherme Defreitas
 	ul.menu
-		li 
-			a(href='/') Blog 
-		li 
-			a(href='/projects') Projetos
-		li 
-			a(href='/about') Sobre
+		
+		- if(req.url == "/" || req.url == "/search" )
+			li.selected 
+				a(href='/') Blog 
+		- else
+			li 
+				a(href='/') Blog 
+		
+		- if(req.url == "/projects")
+			li.selected 
+				a(href='/projects') Projetos
+		- else
+			li
+				a(href='/projects') Projetos
+		
+		- if(req.url == "/about")
+			li.selected 
+				a(href='/about') Sobre
+		- else
+			li 
+				a(href='/about') Sobre
 		li
 			a#search-button(href="#") 
 				| <span class="icon">z</span>

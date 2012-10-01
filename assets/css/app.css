@@ -214,6 +214,10 @@ a:active {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
+.site-header ul.menu li.selected{
+  text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.7);  
+}
+
 .site-header a{
    -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;

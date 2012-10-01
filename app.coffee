@@ -21,6 +21,10 @@ app.helpers({ md: ghm })
 app.helpers({moment : moment})
 app.helpers({TrimStr : core.TrimStr })
 app.helpers({pageTitle : 'Guilherme Defreitas' })
+app.dynamicHelpers({
+    req: (req, res) ->
+        return req
+})
 
 currentUser = (req, res, callback) ->
 	core.findOneUser({_id : core.ObjectId(req.session.userid)}, (err, user) ->
