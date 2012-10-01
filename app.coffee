@@ -202,7 +202,7 @@ app.get('/admin/posts', andIsAdmin, (req,res) ->
 app.post('/admin/posts', andIsAdmin, (req,res) ->
 	title = req.body.post.title
 	body = req.body.post.body
-	tags = req.body.post.tags.split(',')
+	tags = req.body.post.tags
 	urlid = core.doDashes(title)
 
 	core.Post.findOne({urlid : urlid}).exec((err, post) ->
