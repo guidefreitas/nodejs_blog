@@ -69,7 +69,7 @@ andIsAdmin = (req, res, next) ->
 
 
 app.get('/', (req, res) ->
-	core.Post.find().sort('-date').limit(5).exec((err,posts) ->
+	core.Post.find().sort('-date').exec((err,posts) ->
 		if(!err)
 			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: posts })	
 		else
