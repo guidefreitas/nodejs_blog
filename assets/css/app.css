@@ -376,6 +376,10 @@ section.post img{
   position: relative;
 }
 
+section.post ol{
+  list-style-type: decimal;
+}
+
 #canvasSource{
   display: none;
 }
