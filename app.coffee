@@ -245,7 +245,7 @@ app.get('/admin/posts/:id', andIsAdmin, (req,res) ->
 app.put('/admin/posts/:id', andIsAdmin, (req, res) ->
 	title = req.body.post.title
 	body = req.body.post.body
-	tags = req.body.post.tags.split(',')
+	tags = req.body.post.tags
 	urlid = core.doDashes(title)
 	core.Post.findOne({_id:core.ObjectId(req.params.id)}).exec((err,post) ->
 		if(err)
