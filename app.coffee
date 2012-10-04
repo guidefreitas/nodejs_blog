@@ -26,6 +26,21 @@ app.dynamicHelpers({
         return req
 })
 
+## CACHE CONFIG
+app.dynamicHelpers({
+	req: (req, res) ->
+		if (!res.getHeader('Cache-Control'))
+			res.setHeader('Cache-Control', 'public, max-age=' + 86400)
+			return req
+})
+
+app.configure('production', () ->
+	oneYear = 86400
+	app.use(express.static(__dirname + '/public', { maxAge: oneYear }))
+	app.use(express.errorHandler())
+);
+## END CACHE CONFIG
+
 currentUser = (req, res, callback) ->
 	core.findOneUser({_id : core.ObjectId(req.session.userid)}, (err, user) ->
 		callback(err, user)
