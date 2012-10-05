@@ -20,7 +20,8 @@
     "mongoose" : "*",
     "github-flavored-markdown" : "*",
     "moment" : "*",
-    "rss" : "*"
+    "rss" : "*",
+    "gzippo" : "*"
   },
 
   "bundleDependencies": [

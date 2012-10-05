@@ -3,6 +3,7 @@ express = require('express')
 ghm = require("github-flavored-markdown")
 moment = require('moment')
 RSS = require('rss')
+gzippo = require('gzippo')
 moment.lang('pt-br');
 
 app = express.createServer()
@@ -13,7 +14,8 @@ app.use(express.cookieParser());
 app.use(express.session({ secret: "keyboard cat" }));
 
 app.use require('connect-assets')()
-app.use(express.static(__dirname + '/public'))
+#app.use(express.static(__dirname + '/public'))
+app.use(gzippo.staticGzip(__dirname + '/public'))
 app.set('view engine', 'jade')
 
 app.helpers({ notice: false })
@@ -25,6 +27,9 @@ app.dynamicHelpers({
     req: (req, res) ->
         return req
 })
+
+# COMPRESS
+app.use(gzippo.compress())
 
 ## CACHE CONFIG
 app.dynamicHelpers({
