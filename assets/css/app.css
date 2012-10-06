@@ -1,67 +1,67 @@
 @font-face {
   font-family: 'MuseoSans-700';
-  src: url("http://fonts.coderwall.com/fonts/221897_0_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_0_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_0_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_0_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_0_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_0_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_0_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_0_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-300';
-  src: url("http://fonts.coderwall.com/fonts/221897_1_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_1_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_1_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_1_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_1_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_1_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_1_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_1_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-900Italic';
-  src: url("http://fonts.coderwall.com/fonts/221897_2_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_2_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_2_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_2_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_2_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_2_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_2_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_2_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-500';
-  src: url("http://fonts.coderwall.com/fonts/221897_3_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_3_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_3_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_3_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_3_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_3_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_3_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_3_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-100';
-  src: url("http://fonts.coderwall.com/fonts/221897_4_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_4_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_4_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_4_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_4_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_4_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_4_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_4_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-700Italic';
-  src: url("http://fonts.coderwall.com/fonts/221897_5_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_5_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_5_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_5_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_5_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_5_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_5_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_5_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-300Italic';
-  src: url("http://fonts.coderwall.com/fonts/221897_6_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_6_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_6_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_6_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_6_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_6_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_6_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_6_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-100Italic';
-  src: url("http://fonts.coderwall.com/fonts/221897_7_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_7_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_7_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_7_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_7_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_7_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_7_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_7_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-500Italic';
-  src: url("http://fonts.coderwall.com/fonts/221897_8_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_8_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_8_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_8_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_8_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_8_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_8_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_8_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'MuseoSans-900';
-  src: url("http://fonts.coderwall.com/fonts/221897_9_0.eot");
-  src: url("http://fonts.coderwall.com/fonts/221897_9_0.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/221897_9_0.woff") format("woff"), url("http://fonts.coderwall.com/fonts/221897_9_0.ttf") format("truetype");
+  src: url("http://app.guidefreitas.com/fonts/221897_9_0.eot");
+  src: url("http://app.guidefreitas.com/fonts/221897_9_0.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/221897_9_0.woff") format("woff"), url("http://app.guidefreitas.com/fonts/221897_9_0.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'ChunkFiveRegular';
-  src: url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.eot");
-  src: url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.eot?#iefix") format("embedded-opentype"), url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.woff") format("woff"), url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.ttf") format("truetype"), url("http://fonts.coderwall.com/fonts/Chunkfive-webfont.svg#ChunkFiveRegular") format("svg");
+  src: url("http://app.guidefreitas.com/fonts/Chunkfive-webfont.eot");
+  src: url("http://app.guidefreitas.com/fonts/Chunkfive-webfont.eot?#iefix") format("embedded-opentype"), url("http://app.guidefreitas.com/fonts/Chunkfive-webfont.woff") format("woff"), url("http://app.guidefreitas.com/fonts/Chunkfive-webfont.ttf") format("truetype"), url("http://app.guidefreitas.com/fonts/Chunkfive-webfont.svg#ChunkFiveRegular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
