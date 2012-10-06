@@ -3,6 +3,7 @@ Simple (but great) Blog with Nodejs, Express, Mongoose, Markdown and Coffeescrip
 ## Features
 - Use Markdown syntax to write your posts
 - Simple Administration Interface
+- Authentication 
 - Search mechanism
 - Contact form
 - Ready to deploy in Heroku
