@@ -1,7 +1,7 @@
 # To set the environment variable on heroku use: 
 # heroku config:add DBURL=mongodb://user:pass@host:port/database
 
-exports.dbUrl = ENV['DBURL'] # OR 'mongodb://user:pass@host:port/database'
+exports.dbUrl = process.env['DBURL'] # OR 'mongodb://user:pass@host:port/database'
 exports.blog_title = 'Sample Title'
 exports.blog_description = 'Sample Blog Description'
 exports.feed_url = 'http://blogurl.com/rss.xml'
