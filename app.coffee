@@ -47,7 +47,7 @@ app.configure('production', () ->
 ## END CACHE CONFIG
 
 currentUser = (req, res, callback) ->
-	core.findOneUser({_id : core.ObjectId(req.session.userid)}, (err, user) ->
+	core.User.findOne({_id : core.ObjectId(req.session.userid)}, (err, user) ->
 		callback(err, user)
 			
 	)
@@ -63,7 +63,7 @@ app.dynamicHelpers({
 		if !req.session.userid
 			return null
 
-		return core.findOneUser({_id : core.ObjectId(req.session.userid)}, (err, user) ->
+		return core.User.findOne({_id : core.ObjectId(req.session.userid)}, (err, user) ->
 			if !err and user
 				return user
 		)
@@ -80,7 +80,7 @@ isAuthenticated = (req, res, next) ->
 
 andIsAdmin = (req, res, next) ->
 	if isAuthenticated(req,res,next)
-		core.findOneUser({_id : core.ObjectId(req.session.userid)}, (err, user) ->
+		core.User.findOne({_id : core.ObjectId(req.session.userid)}, (err, user) ->
 			if !err and user
 				if user.admin 
 					next()
@@ -197,7 +197,7 @@ app.get('/logout', (req,res) ->
 );
 
 app.post('/login', (req,res) ->
-	core.findOneUser({username : req.body.user.username}, (err, user) ->
+	core.User.findOne({username : req.body.user.username}, (err, user) ->
 		if !err and user
 			if user.password == req.body.user.password
 				req.session.userid = user._id

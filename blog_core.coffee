@@ -1,10 +1,7 @@
 mongoose = require('mongoose')
 config = require('./config')
 
-remoteDbUrl = 'mongodb://heroku:5bw313@alex.mongohq.com:10085/app5635522'
-localDbUrl = 'mongodb://localhost/blog'
-
-db = mongoose.createConnection(remoteDbUrl)
+db = mongoose.createConnection(config.dbUrl)
 exports.db = db
 exports.ObjectId = (id) ->
 	new mongoose.Types.ObjectId(id)
@@ -69,13 +66,7 @@ User.find({username: 'guilherme'}, (err, users) ->
 		)
 )
 
-
-#databaseUrl = config.db_database; #"username:password@example.com/mydb"
-#collections = ["users", "posts"]
-#db = require("mongojs").connect(databaseUrl, collections)
-
-
-
+###
 exports.findPosts = () ->
 	Post.find().exec((err,posts) ->
 		if(err)
@@ -97,7 +88,7 @@ exports.findOneUser = (args, callback) ->
 	User.findOne(args, (err, user) ->
 		callback(err, user)
 	)
-
+###
 #UTILS
 exports.TrimStr = (str) ->
 	return str.replace(/^\s+|\s+$/g,"")
