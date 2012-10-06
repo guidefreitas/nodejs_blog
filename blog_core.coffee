@@ -6,10 +6,6 @@ exports.db = db
 exports.ObjectId = (id) ->
 	new mongoose.Types.ObjectId(id)
 
-
-exports.doDashes = (str) ->
-	return str.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase();
-
 userSchema = mongoose.Schema({ 
 	username: {
 		type: String,
@@ -22,9 +18,6 @@ userSchema = mongoose.Schema({
 	},
 	admin: Boolean 
 })
-
-userSchema.methods.sayHello = () ->
-	console.log('HELOOO')
 
 postSchema = mongoose.Schema({ 
 	urlid: {
@@ -52,43 +45,23 @@ exports.Post = Post
 exports.User = User
 exports.Message = Message
 
-User.find({username: 'guilherme'}, (err, users) ->
+User.find({username: 'admin'}, (err, users) ->
 	if(!err && users.length == 0)
 		gui = new User({ 
-			username: 'guilherme', 
-			password: 'gui123', 
-			email: 'guilherme.defreitas@gmail.com',
+			username: 'admin', 
+			password: 'admin123', 
+			email: 'admin@admin.com',
 			admin: true
 		})
 		gui.save((err) ->
 			if(err)
-				console.log('Erro ao salvar usuario guilherme')
+				console.log('Erro ao salvar usuario admin')
 		)
 )
 
-###
-exports.findPosts = () ->
-	Post.find().exec((err,posts) ->
-		if(err)
-			console.log "Erro:" + err
-		else
-			return posts
-	)
-
-exports.findUsers = (args) ->
-	args = Array.prototype.slice.call(arguments)
-	callback = args.pop()
-
-	User.find(args, (err,users) ->
-		callback(err, users)
-	)
-
-exports.findOneUser = (args, callback) ->
-
-	User.findOne(args, (err, user) ->
-		callback(err, user)
-	)
-###
 #UTILS
 exports.TrimStr = (str) ->
 	return str.replace(/^\s+|\s+$/g,"")
+
+exports.doDashes = (str) ->
+	return str.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase();

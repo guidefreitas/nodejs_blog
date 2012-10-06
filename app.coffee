@@ -4,10 +4,13 @@ ghm = require("github-flavored-markdown")
 moment = require('moment')
 RSS = require('rss')
 gzippo = require('gzippo')
+config = require('./config')
+
 moment.lang('pt-br');
 
 app = express.createServer()
 
+# NODEJS MIDDLEWARES
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser());
@@ -17,18 +20,6 @@ app.use require('connect-assets')()
 #app.use(express.static(__dirname + '/public'))
 app.use(gzippo.staticGzip(__dirname + '/public'))
 app.set('view engine', 'jade')
-
-app.helpers({ notice: false })
-app.helpers({ md: ghm })
-app.helpers({moment : moment})
-app.helpers({TrimStr : core.TrimStr })
-app.helpers({pageTitle : 'Guilherme Defreitas' })
-app.dynamicHelpers({
-    req: (req, res) ->
-        return req
-})
-
-# COMPRESS
 app.use(gzippo.compress())
 
 ## CACHE CONFIG
@@ -45,6 +36,19 @@ app.configure('production', () ->
 	app.use(express.errorHandler())
 );
 ## END CACHE CONFIG
+
+#HELPERS
+app.helpers({ notice: false })
+app.helpers({ md: ghm })
+app.helpers({moment : moment})
+app.helpers({TrimStr : core.TrimStr })
+app.helpers({pageTitle : config.blog_title })
+app.helpers({config : config})
+
+app.dynamicHelpers({
+    req: (req, res) ->
+        return req
+})
 
 currentUser = (req, res, callback) ->
 	core.User.findOne({_id : core.ObjectId(req.session.userid)}, (err, user) ->
@@ -69,7 +73,7 @@ app.dynamicHelpers({
 		)
 
 })
-
+## END HELPERS
 
 isAuthenticated = (req, res, next) ->
 	if !req.session.userid
@@ -87,9 +91,6 @@ andIsAdmin = (req, res, next) ->
 			else
 				next(new Error('Unauthorized'))
 		)
-		
-
-
 
 
 app.get('/', (req, res) ->
@@ -128,12 +129,12 @@ app.get('/rss.xml', (req, res) ->
 	
 
 	feed = new RSS({
-        title: 'Guilherme Defreitas Blog',
-        description: 'Guilherme Defreitas Blog',
-        feed_url: 'http://guidefreitas.com/rss.xml',
-        site_url: 'http://guidefreitas.com',
-        image_url: 'http://guidefreitas.com/icon.png',
-        author: 'Guilherme Defreitas Juraszek'
+        title: config.blog_title,
+        description: config.blog_description,
+        feed_url: config.feed_url,
+        site_url: config.site_url,
+        image_url: config.site_image_url,
+        author: config.site_author
     })
 
 	core.Post.find().exec((err,posts) ->
@@ -143,12 +144,10 @@ app.get('/rss.xml', (req, res) ->
 			posts.map (post) ->
 				feed.item({
             		title:  post.title,
-            		url: 'http://guidefreitas.com/' + post.urlid          
+            		url: config.site_url + '/' + post.urlid          
         		})
         	res.contentType("rss")
 			res.send(feed.xml());
-
-
 	)
 
 	
@@ -308,8 +307,6 @@ app.del('/admin/posts/:id', andIsAdmin, (req, res) ->
 	)
 )
 
-
-
 app.get('/admin/posts/edit/:id', andIsAdmin, (req,res) ->
 	core.Post.findOne({_id : core.ObjectId(req.params.id)}).exec((err,post) ->
 		if(err)
@@ -332,7 +329,6 @@ app.get('/admin/messages', andIsAdmin, (req, res) ->
 	)
 )
 
-
 app.get('/:id', (req, res) ->
 	urlid = req.params.id
 	post = core.Post.findOne({urlid: urlid}).exec((err, post) ->
@@ -346,7 +342,6 @@ app.get('/:id', (req, res) ->
 	)
 	
 )
-
 
 app.get('*', (req, res) ->
 	#res.render('404', { pageTitle: 'Not Found :(' })
