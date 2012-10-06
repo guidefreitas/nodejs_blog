@@ -14,7 +14,7 @@ To see a demo in action visit [http://app.guidefreitas.com](http://app.guidefrei
 To configure your blog copy config.coffee.sample file to config.coffee and edit:
 
 ```bash 
-exports.dbUrl = 'mongodb://user:pass@host:port/database'
+exports.dbUrl = process.env['DBURL'] # OR 'mongodb://user:pass@host:port/database'
 exports.blog_title = 'Sample Title'
 exports.blog_description = 'Sample Blog Description'
 exports.feed_url = 'http://blogurl.com/rss.xml'
@@ -28,7 +28,7 @@ exports.author_twitter_url = 'http://twitter.com/author'
 exports.author_linkedin_url = 'http://www.linkedin.com/pub/author_url'
 exports.author_github_url = 'https://github.com/author'
 exports.author_skype_url = 'callto://skype_author_username'
-```
+``
 
 ## TODO
 - Media management in administration interface
