@@ -1,5 +1,6 @@
 mongoose = require('mongoose')
 config = require('./config')
+config.dbUrl = 'mongodb://localhost:27017/blog_test'
 
 db = mongoose.createConnection(config.dbUrl)
 exports.db = db

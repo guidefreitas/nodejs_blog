@@ -29,7 +29,12 @@ exports.author_twitter_url = 'http://twitter.com/author'
 exports.author_linkedin_url = 'http://www.linkedin.com/pub/author_url'
 exports.author_github_url = 'https://github.com/author'
 exports.author_skype_url = 'callto://skype_author_username'
-```
+``
+
+## TEST
+
+To test run
+``mocha --compilers coffee:coffee-script -R spec
 
 ## TODO
 - Media management in administration interface
