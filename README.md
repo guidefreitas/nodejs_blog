@@ -35,7 +35,7 @@ exports.author_skype_url = 'callto://skype_author_username'
 
 ### To test run
 
-mocha --compilers coffee:coffee-script -R spec
+make test
 
 ## TODO
 - Media management in administration interface
