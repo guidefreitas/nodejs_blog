@@ -1,6 +1,6 @@
 core = require('../blog_core')
 assert = require("assert")
-
+core.config.dbUrl = 'mongodb://localhost:27017/blog_test'
 describe('User', () ->
 	user = new core.User({ 
 			username: 'userteste', 

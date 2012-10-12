@@ -21,7 +21,8 @@
     "github-flavored-markdown" : "*",
     "moment" : "*",
     "rss" : "*",
-    "gzippo" : "*"
+    "gzippo" : "*",
+    "crypto" : "*"
   },
 
   "bundleDependencies": [

@@ -1,8 +1,9 @@
 mongoose = require('mongoose')
+crypto = require('crypto')
 config = require('./config')
-config.dbUrl = 'mongodb://localhost:27017/blog_test'
 
 db = mongoose.createConnection(config.dbUrl)
+exports.config = config
 exports.db = db
 exports.ObjectId = (id) ->
 	new mongoose.Types.ObjectId(id)
@@ -48,15 +49,16 @@ exports.Message = Message
 
 User.find({username: 'admin'}, (err, users) ->
 	if(!err && users.length == 0)
+		pass_crypted = crypto.createHmac("md5", config.crypto_key).update('admin123').digest("hex")
 		gui = new User({ 
 			username: 'admin', 
-			password: 'admin123', 
+			password: pass_crypted, 
 			email: 'admin@admin.com',
 			admin: true
 		})
 		gui.save((err) ->
 			if(err)
-				console.log('Erro ao salvar usuario admin')
+				console.log('Error when try to save admin user')
 		)
 )
 

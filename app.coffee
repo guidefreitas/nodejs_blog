@@ -4,6 +4,7 @@ ghm = require("github-flavored-markdown")
 moment = require('moment')
 RSS = require('rss')
 gzippo = require('gzippo')
+crypto = require('crypto')
 config = require('./config')
 
 moment.lang('pt-br');
@@ -198,13 +199,14 @@ app.get('/logout', (req,res) ->
 app.post('/login', (req,res) ->
 	core.User.findOne({username : req.body.user.username}, (err, user) ->
 		if !err and user
-			if user.password == req.body.user.password
+			pass_crypted = crypto.createHmac("md5", config.crypto_key).update(req.body.user.password).digest("hex")
+			if user.password == pass_crypted
 				req.session.userid = user._id
 				res.redirect('/admin')
 			else
-				res.render('sessions/new', { pageTitle: 'Admin', notice: 'Usuario ou senha incorretos' })
+				res.render('sessions/new', { pageTitle: 'Admin', notice: 'Invalir user or password' })
 		else
-			res.render('sessions/new', { pageTitle: 'Admin', notice: 'Usuario nao encontrado' })
+			res.render('sessions/new', { pageTitle: 'Admin', notice: 'User not found' })
 	)
 );
 
@@ -241,7 +243,7 @@ app.post('/admin/posts', andIsAdmin, (req,res) ->
 
 		post.save((err) ->
 			if(err)
-				res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout', notice: 'Erro ao salvar' })
+				res.render('posts/new', { pageTitle: 'New Post', layout: 'admin_layout', notice: 'Error while saving the post' })
 			else
 				res.redirect('/admin/posts')				
 		)
