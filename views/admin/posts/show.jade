@@ -8,10 +8,13 @@ article.blog
 					img(src='/img/about/gui.png', width='68', height='68')
 			p!= md.parse(post.body)
 
-			a.button-edit(href='/admin/posts/edit/' + post._id) Edit
-			form(name='post', method='post', action='/admin/posts/' + post._id)
-				input(type='hidden', name='_method', value='DELETE')
-				input(type="submit", class='button-delete', name='delete', value='Delete')
+			div.horizontal_menu
+				div.menu_item
+					a.button-edit(href='/admin/posts/edit/' + post._id) Edit
+				div.menu_item
+					form(name='post', method='post', action='/admin/posts/' + post._id)
+						input(type='hidden', name='_method', value='DELETE')
+						input(type="submit", class='button-delete', name='delete', value='Delete')
 
 
 			
