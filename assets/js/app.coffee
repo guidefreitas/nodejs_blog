@@ -16,10 +16,45 @@ class CanvasImage
 					this.context.drawImage(this.element, x, y)
 		this.context.globalAlpha = 1.0
 
-				
+showLoading = () ->
+	console.log('Show loading')
 
+hideLoading = () ->
+	console.log('Hide loading')
+
+showPosts = (posts) ->
+	template = _.template(
+            $("script.template_post").html()
+    )
+
+	_.each(posts, (post) ->
+		templateData = {
+			post: post
+		}
+
+		$('#blog-main-page').append(
+			template(templateData);
+		)
+		
+	)
+		
+
+getPosts = ()->
+	$.ajax '/posts_home',
+		type: 'GET'
+		data: 'from=3'
+		beforeSend: () ->
+			#showLoading()
+		success: (data, textStatus, jqXHR) ->
+			showPosts(data)
+			#hideLoading()
+		error: (jqXHR, textStatus, errorThrown) ->
+			#hideLoading()
+		complete: (xhr, status) ->
+			#alert('completo')
 
 $(document).ready(() ->
+
 	id = 'bgcanvas'
 	url = '/img/bg2.jpg'
 	image = new Image()
@@ -68,5 +103,10 @@ $(document).ready(() ->
 		})
 		event.preventDefault()
 	)
+
+	$(document).scroll(() ->
+		if($(window).scrollTop() == $(document).height() - $(window).height())
+			getPosts()
+	);
 
 )

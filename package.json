@@ -22,7 +22,8 @@
     "moment" : "*",
     "rss" : "*",
     "gzippo" : "*",
-    "crypto" : "*"
+    "crypto" : "*",
+    "underscore" : "*"
   },
 
   "bundleDependencies": [

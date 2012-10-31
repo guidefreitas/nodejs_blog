@@ -6,6 +6,7 @@ RSS = require('rss')
 gzippo = require('gzippo')
 crypto = require('crypto')
 config = require('./config')
+_ = require('underscore')._
 
 moment.lang('pt-br');
 
@@ -95,13 +96,38 @@ andIsAdmin = (req, res, next) ->
 
 
 app.get('/', (req, res) ->
-	core.Post.find().sort('-date').exec((err,posts) ->
+	core.Post.find().sort('-date').limit(6).exec((err,posts) ->
 		if(!err)
 			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: posts })	
 		else
 			res.render('500', { pageTitle: 'Oops' })
 	)
 	
+)
+
+app.get('/posts_home', (req, res) ->
+	from = req.query["from"]
+	if(!from)
+		res.json(['FAIL - Parameter from not informed'])
+
+	core.Post.find().sort('-date').skip(from).limit(5).exec((err,posts) ->
+		if(!err)
+			posts_render = []
+			count = 0
+			while count<posts.length
+				post = posts[count]
+				post_render = {
+					title: post.title,
+					body: ghm.parse(post.body),
+					date: moment(post.date).format('LL')
+					tags: post.tags
+				}
+				posts_render.push(post_render)
+				count++
+			res.json(posts_render)	
+		else
+			res.json(['FAIL'])
+	)
 )
 
 app.get('/search',(req, res) ->
