@@ -120,7 +120,8 @@ app.get('/posts_home', (req, res) ->
 					title: post.title,
 					body: ghm.parse(post.body),
 					date: moment(post.date).format('LL')
-					tags: post.tags
+					tags: post.tags,
+					urlid: post.urlid
 				}
 				posts_render.push(post_render)
 				count++
