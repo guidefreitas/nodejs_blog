@@ -104,12 +104,7 @@ $(document).ready(() ->
 		event.preventDefault()
 	)
 
-	$(window).scroll(() ->
-		isMainPage = $('#blog-main-page')
-		if(isMainPage.length > 0)
-			console.log($(window).scrollTop())
-			if($(window).scrollTop() == $(document).height() - $(window).height())
-				getPosts()
+	$(document).scroll( () -> 
+			
 	);
-
 )

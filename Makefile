@@ -3,4 +3,6 @@
 		--compilers coffee:coffee-script \
 		-R spec
 
- .PHONY: test
+run:
+	supervisor -e "node|js|coffee" run.js
+ .PHONY: test run

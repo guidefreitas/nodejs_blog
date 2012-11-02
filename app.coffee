@@ -140,7 +140,7 @@ app.get('/search',(req, res) ->
 			if(err)
 				res.render('500', { pageTitle: 'Oops' })
 			else
-				res.render('blog/index', { pageTitle: 'Busca', posts: posts })
+				res.render('blog/search', { pageTitle: 'Busca', posts: posts })
 		)
 	else
 		query = new RegExp(req.query["q"], 'i')
@@ -149,7 +149,7 @@ app.get('/search',(req, res) ->
 			if(err)
 				res.render('500', { pageTitle: 'Oops' })
 			else
-				res.render('blog/index', { pageTitle: 'Busca', posts: posts })
+				res.render('blog/search', { pageTitle: 'Busca', posts: posts })
 		)
 )
 

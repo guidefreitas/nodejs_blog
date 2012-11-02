@@ -2,40 +2,40 @@ article#blog-main-page.blog
 	header
 		!=partial('search_field')
 	
-	
-	- if (posts.length == 0)
-		div.content
-			p Nenhum post encontrado
-	- else
-		- each post in posts
+	div.main_posts
+		- if (posts.length == 0)
 			div.content
-				section.post
-					h2 
-						a(href='/'+post.urlid)!= post.title
-					p.meta
-						!= moment(post.date).format('LL')
-						
-					!= partial('post_tags', {post : post})
+				p Nenhum post encontrado
+		- else
+			- each post in posts
+				div.content
+					section.post
+						h2 
+							a(href='/'+post.urlid)!= post.title
+						p.meta
+							!= moment(post.date).format('LL')
+							
+						!= partial('post_tags', {post : post})
 
-					p!= md.parse(post.body)
+						p!= md.parse(post.body)
 
-	| <script type="text/template" class="template_post">
-	|	<div class="content">
-	| 		<section class="post">
-	| 			<h2> <a href="/<%= post.urlid %>"><%- post.title %></a></h2>
-	| 			<p class="meta"><%- post.date %></p>
-	|			<div class="tags-tab">
-	|				<ul id="tags" class="tags">
-	|					<% _.each( post.tags.split(','), function(tag){ %>
-	|						<li><a href="/search?tag=<%= tag %>"><%= tag %></a></li>
-	|					<% }); %>
-	|				</ul>
-	|			</div>
-	|			<p></p>
-	|			<%= post.body %>
-	|		</section>
-	|	</div>
-	| </script>
+		| <script type="text/template" class="template_post">
+		|	<div class="content">
+		| 		<section class="post">
+		| 			<h2> <a href="/<%= post.urlid %>"><%- post.title %></a></h2>
+		| 			<p class="meta"><%- post.date %></p>
+		|			<div class="tags-tab">
+		|				<ul id="tags" class="tags">
+		|					<% _.each( post.tags.split(','), function(tag){ %>
+		|						<li><a href="/search?tag=<%= tag %>"><%= tag %></a></li>
+		|					<% }); %>
+		|				</ul>
+		|			</div>
+		|			<p></p>
+		|			<%= post.body %>
+		|		</section>
+		|	</div>
+		| </script>
 		
 
 									
