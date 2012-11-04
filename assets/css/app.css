@@ -346,6 +346,19 @@ site-page article.blog header h1{
   margin-bottom: 0px;
 }
 
+.old_posts_nav_link{
+  margin-bottom: 10px;
+}
+
+.old_posts_nav_link .icon{
+
+}
+
+.old_posts_nav_link .label{
+  font-size: 1.8em;
+  padding-left: 8px;
+}
+
 .content{
   background: white;
   color: black;
@@ -930,3 +943,4 @@ article#projects .project-description #stores li{
   float: left;
   margin-right: 20px;
 }
+

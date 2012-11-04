@@ -52,6 +52,11 @@ app.dynamicHelpers({
         return req
 })
 
+app.dynamicHelpers({
+	session: (req, res) ->
+		return req.session;
+})
+
 currentUser = (req, res, callback) ->
 	core.User.findOne({_id : core.ObjectId(req.session.userid)}, (err, user) ->
 		callback(err, user)
@@ -96,13 +101,23 @@ andIsAdmin = (req, res, next) ->
 
 
 app.get('/', (req, res) ->
-	core.Post.find().sort('-date').limit(6).exec((err,posts) ->
+	core.Post.find().sort('-date').limit(10).exec((err,posts) ->
 		if(!err)
 			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: posts })	
 		else
 			res.render('500', { pageTitle: 'Oops' })
 	)
 	
+)
+
+app.get('/page/:id' , (req,res) ->
+	id = parseInt(req.params.id)
+	core.Post.find().sort('-date').skip((id-1)*10).limit(10).exec((err,posts) ->
+		if(!err)
+			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: posts })	
+		else
+			res.render('500', { pageTitle: 'Oops' })
+	)
 )
 
 app.get('/posts_home', (req, res) ->
