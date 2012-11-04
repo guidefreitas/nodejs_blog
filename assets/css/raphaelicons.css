@@ -1,9 +1,7 @@
 @font-face {font-family:
     'RaphaelIcons';
-    src:
-    url('http://app.guidefreitas.com/fonts/raphaelicons-webfont.eot');
-    src:
-    local('☺'), url('http://app.guidefreitas.com/fonts/raphaelicons-webfont.woff') format('woff'), url('http://app.guidefreitas.com/fonts/raphaelicons-webfont.ttf') format('truetype'), url('http://app.guidefreitas.com/fonts/raphaelicons-webfont.svg') format('svg');
+    src:url('http://www.guidefreitas.com/fonts/raphaelicons-webfont.eot');
+    src: url("http://www.guidefreitas.com/fonts/raphaelicons-webfont.eot?#iefix") format("embedded-opentype"), url('http://www.guidefreitas.com/fonts/raphaelicons-webfont.woff') format('woff'), url('http://www.guidefreitas.com/fonts/raphaelicons-webfont.ttf') format('truetype'), url('http://www.guidefreitas.com/fonts/raphaelicons-webfont.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
