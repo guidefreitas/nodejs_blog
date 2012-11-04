@@ -7,8 +7,7 @@ gzippo = require('gzippo')
 crypto = require('crypto')
 config = require('./config')
 _ = require('underscore')._
-
-moment.lang('pt-br');
+i18n = require("i18n")
 
 app = express.createServer()
 
@@ -23,6 +22,20 @@ app.use require('connect-assets')()
 app.use(gzippo.staticGzip(__dirname + '/public'))
 app.set('view engine', 'jade')
 app.use(gzippo.compress())
+
+
+#i18n
+i18n.configure({
+    #setup some locales - other locales default to en silently
+    locales:['pt-br', 'en'],
+
+    #where to register __() and __n() to, might be "global" if you know what you are doing
+    register: global
+})
+
+#SET SYSTEM LANGUAGE
+i18n.setLocale('pt-br')
+moment.lang('pt-br');
 
 ## CACHE CONFIG
 app.dynamicHelpers({
@@ -46,6 +59,11 @@ app.helpers({moment : moment})
 app.helpers({TrimStr : core.TrimStr })
 app.helpers({pageTitle : config.blog_title })
 app.helpers({config : config})
+
+app.helpers({
+  __i: i18n.__,
+  __n: i18n.__n
+})
 
 app.dynamicHelpers({
     req: (req, res) ->

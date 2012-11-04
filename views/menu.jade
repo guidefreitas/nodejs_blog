@@ -4,24 +4,24 @@ header.site-header
 		
 		- if(req.url == "/" || req.url == "/search" )
 			li.selected 
-				a(href='/') Blog 
+				a(href='/')!= __('Blog') 
 		- else
 			li 
-				a(href='/') Blog 
+				a(href='/')!= __('Blog') 
 		
 		- if(req.url == "/projects")
 			li.selected 
-				a(href='/projects') Projetos
+				a(href='/projects')!= __('Projects')
 		- else
 			li
-				a(href='/projects') Projetos
+				a(href='/projects')!= __('Projects')
 		
 		- if(req.url == "/about")
 			li.selected 
-				a(href='/about') Sobre
+				a(href='/about')!= __('About')
 		- else
 			li 
-				a(href='/about') Sobre
+				a(href='/about')!= __('About')
 		li
 			a#search-button(href="#") 
 				| <span class="icon">z</span>

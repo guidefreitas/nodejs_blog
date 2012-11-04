@@ -4,12 +4,12 @@ article
 		form.login-form(name='login', method='post', action='/login')
 			fieldset
 				p
-					label Usuário
+					label!= __('User')
 				span
 					input(name='user[username]', class='text-input')
 			fieldset
 				p
-					label Senha
+					label!= __('Password')
 				span
 				input(type='password', class='text-input', name='user[password]')
 

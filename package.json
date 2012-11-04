@@ -23,7 +23,8 @@
     "rss" : "*",
     "gzippo" : "*",
     "crypto" : "*",
-    "underscore" : "*"
+    "underscore" : "*",
+    "i18n" : "*"
   },
 
   "bundleDependencies": [

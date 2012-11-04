@@ -24,7 +24,7 @@ article#blog-main-page.blog
 					div.old_posts_nav_link
 						a(href='/page/' + ( (!req.params.id) ? 2 : (parseInt(req.params.id) + 1) ))
 							img.icon(src='/img/back.png') 
-							span.label Posts antigos
+							span.label!= __('Old Posts')
 
 									
 								
