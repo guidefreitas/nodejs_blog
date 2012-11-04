@@ -930,7 +930,7 @@ article#projects .project-description{
 article#projects .project-description h2{
   font-size: 22px;
 }
-article#projects .project-description p.description{
+article#projects .project-description .description{
   height: 180px;  
 }
 
