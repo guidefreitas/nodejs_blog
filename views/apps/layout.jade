@@ -3,6 +3,10 @@ html(lang="en")
 	head
 		title =pageTitle
 		!= css('app')
+		| <!--[if lte IE 8]>
+		!= css('app_ie')
+		!= js('modernizr')
+		| <![endif]-->
 		!= js('jquery-1.7.2.min')
 		!= js('app')
 	body.site-page
