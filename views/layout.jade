@@ -5,10 +5,10 @@ html(lang="en")
 		meta(charset='UTF-8')
 		meta(name="apple-mobile-web-app-capable", content="yes")
 		meta(http-equiv="X-UA-Compatible", content="chrome=1")
-		| <!--[if gt IE 7]>
+		| <!--[if gte IE 9]>
 		!= css('app')
 		| <![endif]-->
-		| <!--[if lte IE 7]>
+		| <!--[if lte IE 8]>
 		!= css('app_ie')
 		| <![endif]-->
 		!= css('raphaelicons')
