@@ -5,24 +5,24 @@ div
 			
 			- if(req.url == "/" || req.url == "/search" )
 				li.selected 
-					a(href='/')!= __('Blog') 
+					a(href='/', rel="prefetch")!= __('Blog') 
 			- else
 				li 
-					a(href='/')!= __('Blog') 
+					a(href='/', rel="prefetch")!= __('Blog') 
 			
 			- if(req.url == "/projects")
 				li.selected 
-					a(href='/projects')!= __('Projects')
+					a(href='/projects', rel="prefetch")!= __('Projects')
 			- else
 				li
-					a(href='/projects')!= __('Projects')
+					a(href='/projects', rel="prefetch")!= __('Projects')
 			
 			- if(req.url == "/about")
 				li.selected 
-					a(href='/about')!= __('About')
+					a(href='/about', rel="prefetch")!= __('About')
 			- else
 				li 
-					a(href='/about')!= __('About')
+					a(href='/about', rel="prefetch")!= __('About')
 			li
 				a#search-button(href="#") 
 					| <span class="icon">z</span>
