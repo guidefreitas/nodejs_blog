@@ -1,4 +1,4 @@
-!!! xhtml
+!!! 5
 html(lang="en")
 	head
 		title =pageTitle
@@ -6,8 +6,9 @@ html(lang="en")
 		meta(name="apple-mobile-web-app-capable", content="yes")
 		meta(http-equiv="X-UA-Compatible", content="chrome=1")
 		!= css('app')
-		| <!--[if lte IE 8]>
+		| <!--[if lte IE 9]>
 		!= css('app_ie')
+		!= js('html5shiv')
 		!= js('modernizr')
 		| <![endif]-->
 		!= css('raphaelicons')
