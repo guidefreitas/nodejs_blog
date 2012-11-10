@@ -4,8 +4,9 @@ html(lang="en")
 		title =pageTitle
 		meta(charset='UTF-8')
 		meta(name="apple-mobile-web-app-capable", content="yes")
+		meta(name="viewport", content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;")
 		meta(http-equiv="X-UA-Compatible", content="chrome=1")
-		!= css('app')
+		!= css('app2')
 		| <!--[if lte IE 9]>
 		!= js('html5shiv')
 		!= js('modernizr')
@@ -21,8 +22,6 @@ html(lang="en")
 
 
 	body.site-page
-		img#canvasSource(src='/img/bg2.jpg', witdh="300", height="200")
-		canvas.blur#bgcanvas
 		div.wrapper
 			!=partial('menu')
 			!= body
