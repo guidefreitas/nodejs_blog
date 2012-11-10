@@ -396,13 +396,14 @@ site-page article.blog header h1{
 .site-page article.blog header a{
   -webkit-transition: all 0.2s ease-out 0s;
   -moz-transition: all 0.2s ease-out 0s;
+  -webkit-transform: translateZ(0);
 }
 
 .site-page article.blog header time{
   font-size: 1.3em;
 }
 
-.site-page article.blog .content a{
+.content a{
   color: black;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -412,24 +413,24 @@ site-page article.blog header h1{
   -webkit-transform: translateZ(0);
 }
 
-.site-page article.blog .content a:hover{
+.content a:hover{
   opacity: 0.5;
 }
 
-.site-page article.blog .content ul{
+.content ul{
   padding-left: 0px;
 }
 
-.site-page article.blog .content ul li{
+.content ul li{
   margin-bottom: 40px;
 }
 
 
-.site-page article.blog .content section ul{
+.content section ul{
   padding-left: 0px;
 }
 
-.site-page article.blog .content section ul li{
+.content section ul li{
   margin-bottom: 0px;
 }
 
