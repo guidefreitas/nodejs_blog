@@ -409,6 +409,7 @@ site-page article.blog header h1{
   -ms-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+  -webkit-transform: translateZ(0);
 }
 
 .site-page article.blog .content a:hover{
