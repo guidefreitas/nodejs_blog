@@ -1,4 +1,4 @@
-article#blog-main-page.blog
+div#blog-main-page.blog
 	header
 		!=partial('search_field')
 	
@@ -8,7 +8,7 @@ article#blog-main-page.blog
 				p Nenhum post encontrado
 		- else
 			- each post in posts
-				div.content
+				article.content
 					section.post
 						h2 
 							a(href='/'+post.urlid)!= post.title

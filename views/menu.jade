@@ -1,33 +1,34 @@
 div
 	header.site-header
-		a.site-logo(href='/') Guilherme Defreitas
-		ul.menu
-			
-			- if(req.url == "/" || req.url == "/search" )
-				li.selected 
-					a(href='/', rel="prefetch")!= __('Blog') 
-			- else
-				li 
-					a(href='/', rel="prefetch")!= __('Blog') 
-			
-			- if(req.url == "/projects")
-				li.selected 
-					a(href='/projects', rel="prefetch")!= __('Projects')
-			- else
+		nav
+			a.site-logo(href='/') Guilherme Defreitas
+			ul.menu
+				
+				- if(req.url == "/" || req.url == "/search" )
+					li.selected 
+						a(href='/', rel="prefetch")!= __('Blog') 
+				- else
+					li 
+						a(href='/', rel="prefetch")!= __('Blog') 
+				
+				- if(req.url == "/projects")
+					li.selected 
+						a(href='/projects', rel="prefetch")!= __('Projects')
+				- else
+					li
+						a(href='/projects', rel="prefetch")!= __('Projects')
+				
+				- if(req.url == "/about")
+					li.selected 
+						a(href='/about', rel="prefetch")!= __('About')
+				- else
+					li 
+						a(href='/about', rel="prefetch")!= __('About')
 				li
-					a(href='/projects', rel="prefetch")!= __('Projects')
-			
-			- if(req.url == "/about")
-				li.selected 
-					a(href='/about', rel="prefetch")!= __('About')
-			- else
-				li 
-					a(href='/about', rel="prefetch")!= __('About')
-			li
-				a#search-button(href="#") 
-					| <span class="icon">z</span>
-			li
-				a(href="http://feeds.feedburner.com/guidefreitas/RTlL") 
-					| <span class="icon">Æ</span>
+					a#search-button(href="#") 
+						| <span class="icon">z</span>
+				li
+					a(href="http://feeds.feedburner.com/guidefreitas/RTlL") 
+						| <span class="icon">Æ</span>
 
 				

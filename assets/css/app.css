@@ -260,7 +260,7 @@ a:active {
   display: none;
 }
 
-article#about #search-form{
+#about #search-form{
   margin-bottom: 20px;
 }
 
@@ -292,46 +292,46 @@ article#about #search-form{
 }
 
 
-.site-page article.blog header {
+.site-page .blog header {
     margin-bottom: 25px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
-site-page article.blog header h1{
+site-page .blog header h1{
     margin-bottom: 0px;
 }
 
-.site-page article.blog header ul{
+.site-page .blog header ul{
   padding: 0px
 }
 
-.site-page article.blog header ul li {
+.site-page .blog header ul li {
     margin: 0;
     padding: 0;
 }
 
-.site-page article.blog header h1{
+.site-page .blog header h1{
   font-size: 2.4em;
   margin-bottom: 0px;
 }
 
-.site-page article.blog .content h2{
+.site-page .blog .content h2{
   font-size: 1.4em;
   margin-bottom: 0px;
 }
 
 
-.site-page article.blog header a:hover{
+.site-page .blog header a:hover{
     opacity: 0.5;
 }
 
-.site-page article.blog header a{
+.site-page .blog header a{
   -webkit-transition: all 0.2s ease-out 0s;
   -moz-transition: all 0.2s ease-out 0s;
   -webkit-transform: translateZ(0);
 }
 
-.site-page article.blog header time{
+.site-page .blog header time{
   font-size: 1.3em;
 }
 
@@ -358,11 +358,11 @@ site-page article.blog header h1{
 }
 
 
-.content section ul{
+.content article ul{
   padding-left: 0px;
 }
 
-.content section ul li{
+.content article ul li{
   margin-bottom: 0px;
 }
 
@@ -410,14 +410,14 @@ site-page article.blog header h1{
   text-decoration: none;
 }
 
-section.post img{
+article.post img{
   max-width: 450px;
   margin: 10px auto;
   display: inline-block;
   position: relative;
 }
 
-section.post ol{
+article.post ol{
   list-style-type: decimal;
 }
 
