@@ -1,4 +1,4 @@
-/*
+
 @font-face {
   font-family: 'MuseoSans-700';
   src: url("https://s3.amazonaws.com/coderwall-font/221897_0_0.eot");
@@ -82,7 +82,7 @@
   font-weight: normal;
   font-style: normal;
 }
-*/
+
 
 audio,
 canvas,
@@ -393,9 +393,9 @@ site-page article.blog header h1{
   font-size: 1.6em;
   line-height: 1.4em;
   margin-bottom: 1.6em;
-  /* -webkit-box-shadow: 0px 2px 10px rgba(0,0,0, 0.8);
+  -webkit-box-shadow: 0px 2px 10px rgba(0,0,0, 0.8);
   -moz-box-shadow: 0px 2px 10px rgba(0,0,0, 0.8);
-  box-shadow: 0px 2px 10px rgba(0,0,0, 0.8); */
+  box-shadow: 0px 2px 10px rgba(0,0,0, 0.8);
 }
 
 .content a{

@@ -17,7 +17,7 @@ class CanvasImage
 		this.context.globalAlpha = 1.0
 
 $(document).ready(() ->
-	///
+	
 	id = 'bgcanvas'
 	url = '/img/bg2.jpg'
 	image = new Image()
@@ -28,7 +28,7 @@ $(document).ready(() ->
 		canvasImage.blur(4)	
 
 	image.src = url
-	///
+
 	$('#search-button').click(() ->
 		$('#search-form').slideDown('fast', () ->
 			$('#search-field').focus();
