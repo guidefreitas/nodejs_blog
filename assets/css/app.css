@@ -374,8 +374,13 @@ site-page .blog header h1{
   padding-left: 8px;
 }
 
+.old_posts_nav_link a{
+  color: #fff;
+}
 
-
+.old_posts_nav_link a:hover{
+  opacity: 0.7;
+}
 
 .post{
   background: white;
