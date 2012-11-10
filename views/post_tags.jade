@@ -1,6 +1,6 @@
 - if(post.tags)
-	div.tags-tab
-		ul#tags.tags
-			- each tag in post.tags.split(',')
-				li
-					a(href='/search?tag=' + TrimStr(tag))!= TrimStr(tag)
+	ul#tags.tags
+		- each tag in post.tags.split(',')
+			li
+				a(href='/search?tag=' + TrimStr(tag))!= TrimStr(tag)
+		
