@@ -1,6 +1,6 @@
 article
 	header
-	div.content
+	div.post
 		- if (notice)
 			p =notice
 		form#new-post-form(name='post', method='post', action='/admin/posts/' + post._id)

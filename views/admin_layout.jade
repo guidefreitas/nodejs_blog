@@ -5,13 +5,14 @@ html(lang="en")
 		meta(charset='UTF-8')
 		meta(name="apple-mobile-web-app-capable", content="yes")
 		!= css('app')
+		!= css('prettify')
 		| <!--[if lte IE 8]>
-		!= css('app_ie')
 		!= js('modernizr')
 		| <![endif]-->
 		!= css('raphaelicons')
 		!= js('jquery-1.7.2.min')
 		!= js('app')
+		!= js('prettify')
 	body.site-page
 		img#canvasSource(src='img/bg2.jpg', alt='Canvas Source')
 
