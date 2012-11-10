@@ -102,7 +102,7 @@ ul, ol {
 }
 
 h2 {
-    font-family: "MuseoSans-500";
+    font-family: "MuseoSans-100";
     font-size: 2.4em;
 }
 
@@ -318,7 +318,7 @@ site-page .blog header h1{
 }
 
 .site-page .blog .post h2{
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin-bottom: 0px;
 }
 
