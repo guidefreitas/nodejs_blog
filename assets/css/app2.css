@@ -978,6 +978,10 @@ article#projects .project-description #stores li{
   {
     padding-right: 13px;
   }
+
+  .post img{
+    max-width: 240px;
+  }
 }
 
 
