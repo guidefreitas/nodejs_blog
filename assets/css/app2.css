@@ -207,7 +207,7 @@ a:active {
 .site-header ul.menu{
   vertical-align: left;
   float: right;
-  width: 300px;
+  width: 310px;
 }
 
 .site-header ul.menu li{
@@ -964,6 +964,12 @@ article#projects .project-description #stores li{
 
 .clear{
   clear:both;
+}
+
+@media screen and (max-width: 700px) {
+  .post {
+    padding: 5px 20px;
+  }
 }
 
 
