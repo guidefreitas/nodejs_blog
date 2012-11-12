@@ -986,6 +986,69 @@ article#projects .project-description #stores li{
   .post pre{
     max-width: 290px;
   }
+
+  article#about #contact-form-area {
+    background: none repeat scroll 0 0 #F5F5F5;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    color: #585858;
+    font-size: 14px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: -16px;
+    padding: 36px 26px 10px;
+    width: 230px;
+  }
+
+  #about-profile-area {
+    background: none repeat scroll 0 0 white;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    color: black;
+    font-size: 1.6em;
+    height: 440px;
+    line-height: 1.4em;
+    margin-bottom: 0;
+    min-height: 420px;
+    padding: 2px 0 3px 24px;
+    position: relative;
+    word-wrap: break-word;
+  }
+  
+  #about-profile-area #image {
+    float: left;
+    margin-right: 20px;
+    padding-bottom: 10px;
+  }
+
+  article#about #contact-form-area .text-input {
+    border: 1px solid #AAAAAA;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 16px;
+    outline: medium none;
+    padding: 8px 5px;
+    width: 90%;
+  }
+
+  article#about #contact-form-area .text-input {
+    border: 1px solid #AAAAAA;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 16px;
+    outline: medium none;
+    padding: 8px 5px;
+    width: 90%;
+  }
+
+  article#about #contact-form-area textarea {
+    border: 1px solid #AAAAAA;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 16px;
+    width: 90%;
+  }
+
+  article#about #contact-form-area .button-normal {
+    height: 45px;
+    width: 90%;
+  } 
 }
 
 
