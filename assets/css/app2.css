@@ -970,6 +970,14 @@ article#projects .project-description #stores li{
   .post {
     padding: 5px 20px;
   }
+
+  .site-header ul.menu{
+    width: 280px;
+  }
+  .site-header ul.menu li
+  {
+    padding-right: 13px;
+  }
 }
 
 
