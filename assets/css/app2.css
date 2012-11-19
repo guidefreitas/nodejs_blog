@@ -386,11 +386,14 @@ site-page .blog header h1{
 }
 
 .post h2 a{
-  color: #4175c6;
+  color: #616161;
 }
 
 .post a{
   color: #4175c6;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
 }
 
 .post a:hover{
