@@ -945,14 +945,18 @@ article#projects .project-image img{
 
 article#projects .project-description{
   padding: 10px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 article#projects .project-description h2{
   font-size: 22px;
 }
-article#projects .project-description .description{
-  height: 180px;  
+
+article#projects .project-description h3{
+  font-size: 22px;
+}
+
+article#projects .project-description .description{ 
 }
 
 article#projects .project-description #stores{
@@ -962,6 +966,7 @@ article#projects .project-description #stores{
 
 article#projects .project-description #stores li{
   float: left;
+  padding-top: 20px;
   margin-right: 20px;
 }
 
