@@ -1061,6 +1061,26 @@ article#projects .project-description #stores li{
     height: 45px;
     width: 90%;
   } 
+
+  .project-image{
+    display: block;
+    float: left;
+    width: 100%;
+  }
+
+  .project-image img{
+    width: 100%;
+  }
+
+  article#projects .project-description #stores {
+    margin-left: 100px;
+  }
+
+  article#projects .project-description #stores li{
+    float:none;
+    padding-top: 20px;
+    margin-right: 0px;
+  }
 }
 
 
