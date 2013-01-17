@@ -974,6 +974,10 @@ article#projects .project-description #stores li{
   clear:both;
 }
 
+.admin-page{
+  padding-top: 45px;
+}
+
 @media screen and (max-width: 700px) {
   .post {
     padding: 5px 20px;
