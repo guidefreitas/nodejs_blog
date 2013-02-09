@@ -55,10 +55,10 @@ app.configure('production', () ->
 #HELPERS
 app.helpers({ notice: false })
 app.helpers({ md: ghm })
-app.helpers({moment : moment})
-app.helpers({TrimStr : core.TrimStr })
-app.helpers({pageTitle : config.blog_title })
-app.helpers({config : config})
+app.helpers({ moment : moment })
+app.helpers({ TrimStr : core.TrimStr })
+app.helpers({ pageTitle : config.blog_title })
+app.helpers({ config : config })
 
 app.helpers({
   __i: i18n.__,
@@ -396,7 +396,7 @@ app.get('/:id', (req, res) ->
 	post = core.Post.findOne({urlid: urlid}).exec((err, post) ->
 		if(!err)
 			if(post)
-				res.render('blog/show', { pageTitle: post.title, post: post })			
+				res.render('blog/show', { pageTitle: config.blog_title + " - " + post.title, post: post })			
 			else
 				res.render('404', { pageTitle: 'Not Found :(' })
 		else
