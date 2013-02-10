@@ -24,7 +24,9 @@
     "gzippo" : "*",
     "crypto" : "*",
     "underscore" : "*",
-    "i18n" : "*"
+    "i18n" : "*",
+    "async" : "*",
+    "mocha" : "*"
   },
 
   "bundleDependencies": [

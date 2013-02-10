@@ -4,7 +4,7 @@ div#blog-main-page.blog
 	
 	div.main_posts
 		- if (posts.length == 0)
-			div.content
+			article.post
 				p Nenhum post encontrado
 		- else
 			- each post in posts
@@ -26,6 +26,7 @@ div#blog-main-page.blog
 							img.icon(src='/img/back.png') 
 							span.label!= __('Old Posts')
 
+	!=partial('sidebar')
 									
 								
 									

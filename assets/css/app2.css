@@ -687,6 +687,51 @@ site-page .blog header h1{
   padding-bottom: 40px;
 }
 
+.blog .main_posts{
+  float: left;
+  width: 80%;
+}
+
+.side_bar{
+  margin-left: 81%;
+  background: white;
+  color: black;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  word-wrap: break-word;
+  -webkit-box-shadow: 0px 10px 30px rgba(0,0,0, 0.8);
+  -moz-box-shadow: 0px 10px 30px rgba(0,0,0, 0.8);
+  box-shadow: 0px 10px 30px rgba(0,0,0, 0.8);
+  padding: 2px 10px 10px 10px;
+}
+.side_bar h2{
+  font-size: 1.8em;
+}
+
+.side_bar ul{
+  font-size: 1.6em;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 5px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+.side_bar li{
+}
+
+.side_bar a{
+  text-decoration: none;
+  color: black;
+}
+
+.side_bar a:hover{
+  text-decoration: none;
+  color: #999;
+}
+
+
 #tags{
   display: block; 
   height: 50px;
@@ -1079,6 +1124,14 @@ article#projects .project-description #stores li{
     float:none;
     padding-top: 20px;
     margin-right: 0px;
+  }
+
+  .blog .main_posts{
+    width: 100%;
+  }
+
+  .side_bar{
+    display: none;
   }
 }
 

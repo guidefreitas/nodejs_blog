@@ -1,6 +1,20 @@
 mongoose = require('mongoose')
 crypto = require('crypto')
 config = require('./config')
+_ = require('underscore')._
+async = require("async")
+
+
+#UTILS
+
+TrimStr = (str) ->
+	return str.replace(/^\s+|\s+$/g,"")
+
+exports.TrimStr = TrimStr
+	
+
+exports.doDashes = (str) ->
+	return str.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase();
 
 db = mongoose.createConnection(config.dbUrl)
 exports.config = config
@@ -47,6 +61,22 @@ exports.Post = Post
 exports.User = User
 exports.Message = Message
 
+exports.PostsTags = () ->
+	Post.find().select('tags').exec((err, tags) ->
+		if tags
+			filtered_tags = []
+			_.each(tags, (tag) ->
+				if tag.tags != undefined
+					_.each(tag.tags.split(','), (tag2) ->
+						tag2 = TrimStr(tag2)
+						if !_.contains(filtered_tags, tag2.toUpperCase())
+							filtered_tags.push(tag2.toUpperCase())
+					)		
+			)
+			return filtered_tags
+	)
+	
+
 User.find({username: 'admin'}, (err, users) ->
 	if(!err && users.length == 0)
 		pass_crypted = crypto.createHmac("md5", config.crypto_key).update('admin123').digest("hex")
@@ -62,9 +92,4 @@ User.find({username: 'admin'}, (err, users) ->
 		)
 )
 
-#UTILS
-exports.TrimStr = (str) ->
-	return str.replace(/^\s+|\s+$/g,"")
 
-exports.doDashes = (str) ->
-	return str.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase();

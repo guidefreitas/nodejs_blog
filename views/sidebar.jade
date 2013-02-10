@@ -1,0 +1,6 @@
+div.side_bar
+	h2 Categorias
+	ul
+		- each category in categories
+			li 
+				a(href="/search?q=" + category)!= category

@@ -5,7 +5,8 @@ article#blog-search-page.blog
 	
 	- if (posts.length == 0)
 		div.content
-			p Nenhum post encontrado
+			section.post
+				p Nenhum post encontrado
 	- else
 		- each post in posts
 			div.content
