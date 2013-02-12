@@ -156,11 +156,33 @@ app.get('/', (req, res) ->
 
 app.get('/page/:id' , (req,res) ->
 	id = parseInt(req.params.id)
-	core.Post.find().sort('-date').skip((id-1)*10).limit(10).exec((err,posts) ->
-		if(!err)
-			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: posts })	
+	async.series({
+		categories: (callback) ->
+			core.Post.find().select('tags').exec((err, tags) ->
+				if tags
+					filtered_tags = []
+					_.each(tags, (tag) ->
+						if tag.tags != undefined
+							_.each(tag.tags.split(','), (tag2) ->
+								tag2 = core.TrimStr(tag2)
+								if !_.contains(filtered_tags, tag2)
+									filtered_tags.push(tag2)
+							)		
+					)
+					callback(null,filtered_tags.sort())
+			) 
+		,
+		posts: (callback) ->
+			core.Post.find().sort('-date').skip((id-1)*10).limit(10).exec((err,posts) ->
+				callback(null,posts)
+			)
+
+	}, 
+	(err, results) ->
+		if !err
+			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: results.posts, categories: results.categories})
 		else
-			res.render('500', { pageTitle: 'Oops' })
+			res.render('blog/index', { pageTitle: 'OOOOps', posts: []})
 	)
 )
 
