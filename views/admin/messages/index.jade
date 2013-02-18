@@ -11,7 +11,7 @@ article.admin-page
 				- each message in messages
 					li
 						h2
-							a(href='/admin/messages/' + message._id)!= message.name
+							a(href='mailto:' + message.email)!= message.name + ' - ' + message.email
 						div.meta
 							!= moment(message.date).format('LL')
 						p
