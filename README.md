@@ -5,11 +5,13 @@ Simple (but great) Blog with Nodejs, Express, Mongoose, Markdown and Coffeescrip
 - Simple Administration Interface
 - Authentication 
 - Search mechanism
+- Projects/Portifolio area
 - Contact form
 - Ready to deploy in Heroku
 
+
 ## Demo
-To see a demo in action visit [http://app.guidefreitas.com](http://app.guidefreitas.com)
+To see a demo in action visit [http://guidefreitas.com](http://guidefreitas.com)
 
 ## Configuration 
 To configure your blog copy config.coffee.sample file to config.coffee and edit:
@@ -29,6 +31,9 @@ exports.author_twitter_url = 'http://twitter.com/author'
 exports.author_linkedin_url = 'http://www.linkedin.com/pub/author_url'
 exports.author_github_url = 'https://github.com/author'
 exports.author_skype_url = 'callto://skype_author_username'
+exports.author_bio_description = 'Blog owner biography/description'
+
+exports.crypto_key = 'keyboard cat' #change it in production
 ```
 
 ## TEST
@@ -39,3 +44,4 @@ make test
 
 ## TODO
 - Media management in administration interface
+- Get test coverage better
