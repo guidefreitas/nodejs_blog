@@ -1,7 +1,7 @@
 core = require('./blog_core')
 express = require('express')
 MemStore = express.session.MemoryStore
-ghm = require("github-flavored-markdown")
+ghm = require("marked")
 moment = require('moment')
 RSS = require('rss')
 gzippo = require('gzippo')
