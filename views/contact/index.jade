@@ -10,7 +10,7 @@ block content
 				div#image
 					img.profile-image(src='/img/about/about.png')
 				div.profile-description
-					p Bacharel em Sistemas de Informação, com especialização em Engenharia de Software e Mestrando em Computação Aplicada na Universidade do Estado de Santa Catarina (UDESC).
+					p!= config.author_bio_description
 
 
 					ul.social
@@ -36,7 +36,7 @@ block content
 		div#contact-form-area
 			form.contact-form(name='contact', method='post', action='/about/message')
 				fieldset
-					label Nome
+					label Name
 					span
 						input(name='name', class='text-input')
 				fieldset
@@ -47,9 +47,9 @@ block content
 
 
 				fieldset
-					label Mensagem	
+					label Message	
 					span
 						textarea#text(name='message', placeholder='', type='text', cols='40', rows='6')
 
 				fieldset
-					input(type="submit", class='button-normal', name='send', value='Enviar')
+					input(type="submit", class='button-normal', name='send', value='Send')

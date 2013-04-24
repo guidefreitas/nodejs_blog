@@ -15,5 +15,6 @@ exports.author_twitter_url = 'http://twitter.com/author'
 exports.author_linkedin_url = 'http://www.linkedin.com/pub/author_url'
 exports.author_github_url = 'https://github.com/author'
 exports.author_skype_url = 'callto://skype_author_username'
+exports.author_bio_description = 'Blog owner biography/description'
 
 exports.crypto_key = 'e981739hdkdfasdfknasdfiu9823oa0sdf9023o4f' #change it in production

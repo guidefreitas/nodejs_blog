@@ -17,7 +17,7 @@ app = express();
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser());
-app.use(express.session({ secret: "keyboard cat" }));
+app.use(express.session({ secret: config.crypto_key }));
 
 app.use require('connect-assets')()
 #app.use(express.static(__dirname + '/public'))
@@ -25,7 +25,7 @@ app.use(gzippo.staticGzip(__dirname + '/public'))
 app.set('view engine', 'jade')
 app.use(gzippo.compress())
 app.use(express.session({
-  secret: 'secret_key', 
+  secret: config.crypto_key, 
   store: MemStore({
     reapInterval: 60000 * 10
   })
@@ -275,8 +275,8 @@ app.get('/projects', (req, res) ->
   )
 );
 
-app.get('/media', andIsAdmin, (req,res) ->
-  res.render('media/index', { pageTitle: 'Media',  layout: 'admin_layout' })
+app.get('/admin/media', andIsAdmin, (req,res) ->
+  res.render('admin/media/index', { pageTitle: 'Media' })
 );
 
 
