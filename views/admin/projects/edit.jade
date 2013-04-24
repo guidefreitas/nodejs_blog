@@ -1,0 +1,13 @@
+extends ../../admin_layout
+
+block content
+  article.admin-page
+    header
+    div.page
+      - if (notice)
+        p =notice
+      form.new-form(name='project', method='post', action='/admin/projects/' + project._id)
+        input(type='hidden', name='_method', value='PUT')
+        input(type='hidden', value=token)
+        h1 Edit Project
+        include project_form

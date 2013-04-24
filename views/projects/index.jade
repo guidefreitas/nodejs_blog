@@ -5,111 +5,40 @@ block content
 		header
 			include ../search_field
 		
-		div#project.content
-			section
-				div.project-image
-					img(src='/img/projects/gooparties/gooparties.png')
-				div.project-description
-					h2 
-						a(href='#') GooParties
+		- each project in projects
+			div#project.content
+				section
+					div.project-image
+						img(src=project.project_image_url)
+					div.project-description
+						h2 
+							a(href='#')!= project.name
+						p.description!= md.parse(project.description)
+						- if(project.website_link)
+							a(href=project.website_link)!= 'Confira! ' +  project.website_link
 
-					p.description Aplicativo web desenvolvido em conjunto com a <a href="http://www.easycomtec.com">Easy Technology</a>. Descubra quais os eventos da semana que seus amigos irão. 
+						- if(project.download_link)
+							a(href=project.download_link)!= 'Download!'
 
-					<a href="http://www.gooparties.com">Confira! Gooparties.com</a>
+						<ul id="stores">
+						- if(project.ios_app_store_link)
+							li
+								a(href=project.ios_app_store_link)
+									<img src="/img/stores/app_store_normal.png" width="120" height="40">
 
-					h3 Tecnologias utilizadas
-					ul
-						li Responsive Design
-						li HTML5
-						li Backbone.js
-						li Facebook API
-
-		div#project.content
-			section
-				div.project-image
-					img(src='/img/projects/magazine_luiza/magazine_luiza_home.png')
-				div.project-description
-					h2 
-						a(href='#') Black Friday Magazine Luiza
-
-					p.description Aplicativo para Facebook utilizando reconhecimento facial e de sorriso desenvolvido em conjunto com a <a href="http://www.easycomtec.com">Easy Technology</a> para a Magazine Luiza. O aplicativo detecta e oferece descontos para as pessoas que sorrirem.
-
-					h3 Tecnologias utilizadas
-					ul
-						li Node.js e Express.js
-						li HTML5 e Websockets
-						li OpenCV
-
-
-		div#project.content
-			section
-				div.project-image
-					img(src='/img/projects/quale/quale_home.png')
-				div.project-description
-					h2 
-						a(href='#') Qualé Operadora
-
-					p.description Descubra qual é a operadora de um número de celular.
-
-					ul#stores
-						li
-							a(href='http://itunes.apple.com/us/app/quale-operadora/id515844684?ls=1&mt=8')
-								img(src='/img/stores/app_store_normal.png', width='120', height='40')
-						li
-							a(href='http://windowsphone.com/s?appid=6885db7b-33a9-4a48-81c2-be9757bfafd8')
-								img(src='/img/stores/marketplace_normal.png', width='120', height='40')
-						li
-							a(href='https://play.google.com/store/apps/details?id=br.com.guidefreitas')
-								img(src='/img/stores/google_play_normal.png', width='120', height='40')
-
-
-		div#project.content
-			section
-				div.project-image
-					img(src='http://dl.dropbox.com/u/148071/blog/projects/joinville2.png')
-				div.project-description
-					h2 
-						a(href='#') Joinville
-
-					p.description Aplicativo com informações turísticas desenvolvido para um concurso da Nokia/Microsoft.
-
-					ul#stores
-						li
-							a(href='http://windowsphone.com/s?appid=6885db7b-33a9-4a48-81c2-be9757bfafd8')
-								img(src='/img/stores/marketplace_normal.png', width='120', height='40')
-
-		div#project.content
-			section
-				div.project-image
-					img(src='http://dl.dropbox.com/u/148071/blog/projects/jec1.png')
-				div.project-description
-					h2 
-						a(href='#') JEC - Joinville Esporte Clube
-
-					div.description 
-						Aplicativo sobre o clube JEC desenvolvido para um concurso da Nokia/Microsoft.
-
-						ul
-							li História
-							li Torféus
-							li Atletas
-							li Hino e Escudo
-
-					ul#stores
-						li
-							a(href='http://www.windowsphone.com/pt-br/apps/c31fd1be-14a3-4b7c-a4ab-69fb571b4e54')
-								img(src='/img/stores/marketplace_normal.png', width='120', height='40')
-
-		div#project.content
-			section
-				div.project-image
-					img(src='http://dl.dropbox.com/u/148071/blog/projects/hnewstab.png')
-				div.project-description
-					h2 
-						a(href='#') Hacker News Menu Tab
-
-					p.description Aplicativo para mostar as notícias do site Hacker News na barra de menu do Mac OSX
-
-					ul#stores
-						li
-							a(href='http://dl.dropbox.com/u/148071/HNewsTab/HNewsTab.zip') Download Here
+						- if(project.mac_app_store_link)
+							li
+								a(href=project.mac_app_store_link)
+									<img src="/img/stores/app_store_normal.png" width="120" height="40">
+						
+						- if(project.marketplace_link)
+							li
+								a(href=project.marketplace_link)
+									<img src="/img/stores/marketplace_normal.png" width="120" height="40">
+						
+						- if(project.google_play_link)
+							li
+								a(href=project.google_play_link)
+									<img src="/img/stores/google_play_normal.png" width="120" height="40">
+						
+						</ul>				

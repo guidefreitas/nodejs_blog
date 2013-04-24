@@ -58,6 +58,7 @@ projectSchema = mongoose.Schema({
 	description: String,
 	project_image_url: String,
 	website_link: String,
+	download_link: String,
 	ios_app_store_link: String,
 	mac_app_store_link: String,
 	marketplace_link: String,

@@ -864,6 +864,15 @@ site-page .blog header h1{
   color: #AAA;
 }
 
+.admin-page .projects-list h2{
+  font-size: 1.2em;
+}
+
+.admin-page .projects-list ul{
+  padding: 0px;  
+}
+
+
 #about-profile-area{
   padding: 0px 20px 0px 0px;
   min-height: 310px;
