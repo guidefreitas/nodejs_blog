@@ -13,11 +13,11 @@ html(lang="en")
 		!= js('jquery-1.7.2.min')
 		!= js('app')
 		!= js('prettify')
+		block head
 	body.site-page
 		img#canvasSource(src='img/bg2.jpg', alt='Canvas Source')
 
 		canvas.blur#bgcanvas
 		div.wrapper
-			!=partial('menu_admin')
-			
-			!= body
+			include menu_admin
+			block content

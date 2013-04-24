@@ -53,13 +53,26 @@ messageSchema = mongoose.Schema({
 	date: Date 
 })
 
+projectSchema = mongoose.Schema({
+	name: String,
+	description: String,
+	project_image_url: String,
+	website_link: String,
+	ios_app_store_link: String,
+	mac_app_store_link: String,
+	marketplace_link: String,
+	google_play_link: String
+	})
+
 User = db.model('User', userSchema)
 Post = db.model('Post', postSchema)
 Message = db.model('Message', messageSchema)
+Project = db.model('Project', projectSchema)
 
 exports.Post = Post
 exports.User = User
 exports.Message = Message
+exports.Project = Project
 
 exports.PostsTags = () ->
 	Post.find().select('tags').exec((err, tags) ->

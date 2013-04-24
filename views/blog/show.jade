@@ -1,15 +1,18 @@
-div.blog
-	header
-		!=partial('search_field')
+extends ../layout
+
+block content
+	div.blog
+		header
+			!=partial('search_field')
+				
+		article.post
+			h2= post.title
+			p.meta
+				!= moment(post.date).format('LL')
+				a.author(href='/sobre')
+					img(src='/img/about/gui.png', width='68', height='68')
+			!= partial('post_tags', {post : post})
+			div.article_content
+				!= md.parse(post.body)
 			
-	article.post
-		h2= post.title
-		p.meta
-			!= moment(post.date).format('LL')
-			a.author(href='/sobre')
-				img(src='/img/about/gui.png', width='68', height='68')
-		!= partial('post_tags', {post : post})
-		div.article_content
-			!= md.parse(post.body)
-		
 

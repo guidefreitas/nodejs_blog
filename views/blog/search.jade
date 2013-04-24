@@ -1,26 +1,29 @@
-article#blog-search-page.blog
-	header
-		!=partial('search_field')
-	
-	
-	- if (posts.length == 0)
-		div.content
-			section.post
-				p Nenhum post encontrado
-	- else
-		- each post in posts
+extends ../layout
+
+block content
+	article#blog-search-page.blog
+		header
+			!=partial('../search_field')
+		
+		
+		- if (posts.length == 0)
 			div.content
 				section.post
-					h2 
-						a(href='/'+post.urlid)!= post.title
-					p.meta
-						!= moment(post.date).format('LL')
-						
-					!= partial('post_tags', {post : post})
+					p Nenhum post encontrado
+		- else
+			- each post in posts
+				div.content
+					section.post
+						h2 
+							a(href='/'+post.urlid)!= post.title
+						p.meta
+							!= moment(post.date).format('LL')
+							
+						!= partial('post_tags', {post : post})
 
-					p!= md.parse(post.body)
-		
+						p!= md.parse(post.body)
+			
 
+										
 									
-								
-									
+										

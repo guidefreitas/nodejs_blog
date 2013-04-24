@@ -1,5 +1,6 @@
 core = require('./blog_core')
 express = require('express')
+MemStore = express.session.MemoryStore
 ghm = require("github-flavored-markdown")
 moment = require('moment')
 RSS = require('rss')
@@ -10,7 +11,7 @@ _ = require('underscore')._
 i18n = require("i18n")
 async = require("async")
 
-app = express.createServer()
+app = express();
 
 # NODEJS MIDDLEWARES
 app.use(express.bodyParser());
@@ -23,7 +24,12 @@ app.use require('connect-assets')()
 app.use(gzippo.staticGzip(__dirname + '/public'))
 app.set('view engine', 'jade')
 app.use(gzippo.compress())
-
+app.use(express.session({
+	secret: 'secret_key', 
+	store: MemStore({
+  	reapInterval: 60000 * 10
+	})
+}))
 
 #i18n
 i18n.configure({
@@ -38,67 +44,43 @@ i18n.configure({
 i18n.setLocale('pt-br')
 moment.lang('pt-br');
 
-## CACHE CONFIG
-app.dynamicHelpers({
-	req: (req, res) ->
-		if (!res.getHeader('Cache-Control'))
-			res.setHeader('Cache-Control', 'public, max-age=' + 86400)
-			return req
-})
-
 app.configure('production', () ->
 	oneYear = 86400
 	app.use(express.static(__dirname + '/public', { maxAge: oneYear }))
 	app.use(express.errorHandler())
 );
-## END CACHE CONFIG
 
-#HELPERS
-app.helpers({ notice: false })
-app.helpers({ md: ghm })
-app.helpers({ moment : moment })
-app.helpers({ TrimStr : core.TrimStr })
-app.helpers({ pageTitle : config.blog_title })
-app.helpers({ config : config })
 
-app.helpers({
-  __i: i18n.__,
-  __n: i18n.__n
-})
-
-app.dynamicHelpers({
-    req: (req, res) ->
-        return req
-})
-
-app.dynamicHelpers({
-	session: (req, res) ->
-		return req.session;
-})
 
 currentUser = (req, res, callback) ->
-	core.User.findOne({_id : core.ObjectId(req.session.userid)}, (err, user) ->
-		callback(err, user)
-			
-	)
-
-app.dynamicHelpers({
-  token: (req, res) ->
-    return req.session._csrf;
-  
-});
-
-app.dynamicHelpers({
-	current_user: (req, res) ->
-		if !req.session.userid
-			return null
-
-		return core.User.findOne({_id : core.ObjectId(req.session.userid)}, (err, user) ->
-			if !err and user
-				return user
+	if !req.session || !req.session.userid
+		return null
+	else
+		core.User.findOne({_id : core.ObjectId(req.session.userid)}, (err, user) ->
+			callback(err, user)
 		)
 
-})
+app.use((req, res, next) ->
+	res.locals.req = req
+	res.locals.session = () ->
+		if req.session
+			return req.session
+
+	res.locals.token = () ->
+		if req.session && req.session._csrf
+			return req.session._csrf
+
+	res.locals.currentUser = currentUser
+	res.locals.notice = false
+	res.locals.md = ghm
+	res.locals.moment = moment
+	res.locals.TrimStr = core.TrimStr
+	res.locals.pageTitle = config.blog_title
+	res.locals.config = config
+	res.locals.__i = i18n.__
+	res.locals.__n = i18n.__n
+	next()
+);
 
 
 ## END HELPERS
@@ -107,7 +89,6 @@ isAuthenticated = (req, res, next) ->
 	if !req.session.userid
 		res.redirect('/login')
 		return false
-
 	return true
 
 andIsAdmin = (req, res, next) ->
@@ -148,7 +129,7 @@ app.get('/', (req, res) ->
 	}, 
 	(err, results) ->
 		if !err
-			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: results.posts, categories: results.categories})
+			res.render('blog/index', { pageTitle: 'Guilherme Defreitas', posts: results.posts, layout: 'layout', categories: results.categories})
 		else
 			res.render('blog/index', { pageTitle: 'OOOOps', posts: []})
 	)
@@ -263,7 +244,7 @@ app.get('/rss.xml', (req, res) ->
 )
 
 app.get('/about', (req,res) ->
-	res.render('contato/index', { pageTitle: 'Contato' })
+	res.render('contact/index', { pageTitle: 'Contact' })
 )
 
 app.post('/about/message', (req,res) ->
@@ -321,6 +302,40 @@ app.post('/login', (req,res) ->
 app.get('/admin', andIsAdmin, (req,res) ->
 
 	res.render('admin/index', { pageTitle: 'Admin', layout: 'admin_layout'})
+);
+
+app.get('/admin/projects', andIsAdmin, (req, res) ->
+	core.Project.find().sort('-name').exec((err,projects) ->
+		if(!err)
+			res.render('admin/projects/index', { pageTitle: 'Projects', layout: 'admin_layout', projects: projects})
+		else
+			res.render('500', { pageTitle: 'Oops'})
+	)
+);
+
+app.post('/admin/projects', andIsAdmin, (req, res) ->
+	project = new core.Project({
+		name: req.body.project.name,
+		description: req.body.project.description,
+		project_image_url: req.body.project.project_image_url,
+		website_link: req.body.project.website_link,
+		ios_app_store_link: req.body.project.ios_app_store_link,
+		mac_app_store_link: req.body.project.mac_app_store_link,
+		marketplace_link: req.body.project.marketplace_link,
+		google_play_link: req.body.project.google_play_link
+	})
+
+	project.save((err) ->
+		if(err)
+			res.render('projects/new', { pageTitle: 'New Project', layout: 'admin_layout', notice: 'Error while saving the project' })
+		else
+			res.redirect('/admin/projects')
+		)
+);
+
+app.get('/admin/projects/new', andIsAdmin, (req,res) ->
+	project = new core.Project()
+	res.render('admin/projects/new', { pageTitle: 'New Project', layout: 'admin_layout', project: project })
 );
 
 app.get('/admin/posts', andIsAdmin, (req,res) ->

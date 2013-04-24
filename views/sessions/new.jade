@@ -1,20 +1,23 @@
-article
-	header
-	div.post
-		form.login-form(name='login', method='post', action='/login')
-			fieldset
-				p
-					label!= __('User')
-				span
-					input(name='user[username]', class='text-input')
-			fieldset
-				p
-					label!= __('Password')
-				span
-				input(type='password', class='text-input', name='user[password]')
+extends ../admin_layout
 
-			fieldset
-				input(type="submit", class='button-normal', name='login', value='Login')
+block content
+	article
+		header
+		div.post
+			form.login-form(name='login', method='post', action='/login')
+				fieldset
+					p
+						label!= __('User')
+					span
+						input(name='user[username]', class='text-input')
+				fieldset
+					p
+						label!= __('Password')
+					span
+					input(type='password', class='text-input', name='user[password]')
 
-			p
-				=notice
+				fieldset
+					input(type="submit", class='button-normal', name='login', value='Login')
+
+				p
+					=notice

@@ -207,7 +207,7 @@ a:active {
 .site-header ul.menu{
   vertical-align: left;
   float: right;
-  width: 310px;
+  width: 410px;
 }
 
 .site-header ul.menu li{
@@ -415,6 +415,54 @@ site-page .blog header h1{
 }
 
 .post ol{
+  list-style-type: decimal;
+}
+
+.page{
+  background: white;
+  color: black;
+  padding: 50px 67px;
+  margin-bottom: 25px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  min-height: 153px;
+  word-wrap: break-word;
+  font-size: 1.6em;
+  line-height: 1.4em;
+  margin-bottom: 1.6em;
+  -webkit-box-shadow: 0px 10px 30px rgba(0,0,0, 0.8);
+  -moz-box-shadow: 0px 10px 30px rgba(0,0,0, 0.8);
+  box-shadow: 0px 10px 30px rgba(0,0,0, 0.8);
+}
+
+.page h2 a{
+  color: #616161;
+}
+
+.page a{
+  color: #4175c6;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.page a:hover{
+  text-decoration: underline;
+}
+
+.page h2 a:hover{
+  text-decoration: none;
+}
+
+.page img{
+  max-width: 450px;
+  margin: 10px auto;
+  display: inline-block;
+  position: relative;
+}
+
+.page ol{
   list-style-type: decimal;
 }
 
@@ -773,6 +821,12 @@ site-page .blog header h1{
   text-decoration: none;
   color: #858585;
   
+}
+
+.new-form .field{
+  font-size: 1.2em;
+  border: 0;
+  width: 100%;
 }
 
 #new-post-form #title-field{

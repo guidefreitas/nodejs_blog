@@ -19,12 +19,13 @@ html(lang="en")
 		!= js('http://releases.flowplayer.org/5.0.0/flowplayer.min.js')
 		!= js('prettify')
 		!= js('app')
+		block head
 
 
 	body.site-page
 		div.wrapper
-			!=partial('menu')
-			!= body
-			!=partial('analytics')
+			include menu
+			block content
+			include analytics
 
 		
