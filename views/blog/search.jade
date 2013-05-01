@@ -3,7 +3,7 @@ extends ../layout
 block content
 	article#blog-search-page.blog
 		header
-			!=partial('../search_field')
+			include ../search_field
 		
 		
 		- if (posts.length == 0)
@@ -19,7 +19,7 @@ block content
 						p.meta
 							!= moment(post.date).format('LL')
 							
-						!= partial('post_tags', {post : post})
+						include ../post_tags
 
 						p!= md.parse(post.body)
 			
