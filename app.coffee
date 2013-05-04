@@ -10,7 +10,6 @@ config = require('./config')
 _ = require('underscore')._
 i18n = require("i18n")
 async = require("async")
-
 app = express();
 
 # NODEJS MIDDLEWARES
@@ -527,6 +526,8 @@ app.get('/:id', (req, res) ->
   )
   
 )
+
+
 
 app.get('*', (req, res) ->
   #res.render('404', { pageTitle: 'Not Found :(' })
