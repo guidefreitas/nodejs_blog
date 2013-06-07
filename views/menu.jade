@@ -13,17 +13,17 @@ div
 				
 				- if(req.url == "/projects")
 					li.selected 
-						a(href='/projects', rel="prefetch")!= __('Projects')
+						a(href='/projects', rel="prefetch")!= __('Projetos')
 				- else
 					li
-						a(href='/projects', rel="prefetch")!= __('Projects')
+						a(href='/projects', rel="prefetch")!= __('Projetos')
 				
 				- if(req.url == "/about")
 					li.selected 
-						a(href='/about', rel="prefetch")!= __('About')
+						a(href='/about', rel="prefetch")!= __('Sobre')
 				- else
 					li 
-						a(href='/about', rel="prefetch")!= __('About')
+						a(href='/about', rel="prefetch")!= __('Sobre')
 				li
 					a#search-button(href="#") 
 						| <span class="icon">z</span>
