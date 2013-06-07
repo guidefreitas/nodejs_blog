@@ -137,6 +137,7 @@ select {
 
 body, input, submit, textarea {
   font-family: "MuseoSans-300", arial, sans-serif;
+  -webkit-overflow-scrolling: touch;
 }
 
 img {
