@@ -1,4 +1,4 @@
-
+/*
 @font-face {
   font-family: 'MuseoSans-700';
   src: url("https://s3.amazonaws.com/coderwall-font/221897_0_0.eot");
@@ -82,7 +82,7 @@
   font-weight: normal;
   font-style: normal;
 }
-
+*/
 
 audio,
 canvas,
@@ -102,7 +102,7 @@ ul, ol {
 }
 
 h2 {
-    font-family: "MuseoSans-100";
+    /*font-family: "MuseoSans-100";*/
     font-size: 2.4em;
 }
 
@@ -136,7 +136,8 @@ select {
 }
 
 body, input, submit, textarea {
-  font-family: "MuseoSans-300", arial, sans-serif;
+  /*font-family: "MuseoSans-300", arial, sans-serif;*/
+  font-family: Helvetica, arial, sans-serif;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -201,7 +202,7 @@ a:active {
 .site-header {
   margin: 54px 0 0;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-  font-family: "MuseoSans-100", arial, sans-serif;
+  /*font-family: "MuseoSans-100", arial, sans-serif;*/
  
 }
 
@@ -792,7 +793,7 @@ site-page .blog header h1{
   display: block;
   background: url(../img/tag.png) no-repeat 5px center;
   font-size: 0.8em;
-  font-family: "MuseoSans-500";
+  /*font-family: "MuseoSans-500";*/
   padding: 0 15px 0 25px;
   height: 25px;
   line-height: 25px;
@@ -1053,6 +1054,10 @@ article#projects .project-description{
 
 article#projects .project-description h2{
   font-size: 22px;
+}
+
+article#projects .project-description h2 a{
+  color: #005ACC;
 }
 
 article#projects .project-description h3{
