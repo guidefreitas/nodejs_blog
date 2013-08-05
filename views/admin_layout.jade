@@ -1,20 +1,7 @@
 !!! 5
 html(lang="en")
 	head
-		title= pageTitle
-		meta(charset='UTF-8')
-		meta(name="apple-mobile-web-app-capable", content="yes")
-		!= css('http://fonts.googleapis.com/css?family=Open+Sans:400,700')
-		!= css('app2')
-		!= css('prettify')
-		| <!--[if lte IE 8]>
-		!= js('modernizr')
-		| <![endif]-->
-		!= css('raphaelicons')
-		!= js('jquery-1.7.2.min')
-		!= js('app')
-		!= js('prettify')
-		block head
+		include common_head
 	body.site-page
 		img#canvasSource(src='img/bg2.jpg', alt='Canvas Source')
 
