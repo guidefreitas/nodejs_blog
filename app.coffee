@@ -97,7 +97,6 @@ isAdmin = (req, res, next) ->
     )
 
 # Routes
-console.log("Configuring routes")
 routes = require('./routes')
 search = require('./routes/search')
 rss = require('./routes/rss')
@@ -141,41 +140,9 @@ app.del('/admin/posts/:id', isAdmin, admin_posts.remove_post)
 app.get('/admin/messages', isAdmin, admin_messages.index)
 app.get('/:id', posts.show_post)
 
-# app.get('/page/:id' , (req,res) ->
-#   id = parseInt(req.params.id)
-#   async.series({
-#     categories: (callback) ->
-#       core.Post.find().select('tags').exec((err, tags) ->
-#         if tags
-#           filtered_tags = []
-#           _.each(tags, (tag) ->
-#             if tag.tags != undefined
-#               _.each(tag.tags.split(','), (tag2) ->
-#                 tag2 = core.TrimStr(tag2)
-#                 if !_.contains(filtered_tags, tag2)
-#                   filtered_tags.push(tag2)
-#               )   
-#           )
-#           callback(null,filtered_tags.sort())
-#       ) 
-#     ,
-#     posts: (callback) ->
-#       core.Post.find().sort('-date').skip((id-1)*10).limit(10).exec((err,posts) ->
-#         callback(null,posts)
-#       )
-
-#   }, 
-#   (err, results) ->
-#     if !err
-#       res.render('blog/index', { pageTitle: exports.blog_title, posts: results.posts, categories: results.categories})
-#     else
-#       res.render('blog/index', { pageTitle: 'OOOOps', posts: []})
-#   )
-# )
-
-# app.get('*', (req, res) ->
-#   res.redirect('/')
-# );
+app.get('*', (req, res) ->
+  res.redirect('/')
+);
 
 port = process.env.PORT || 3000;
 app.listen(port)
