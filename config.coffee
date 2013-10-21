@@ -18,3 +18,4 @@ exports.author_skype_url = 'callto://guilherme.defreitas'
 exports.author_bio_description = 'Bacharel em Sistemas de Informação, com especialização em Engenharia de Software e Mestrando em Computação Aplicada na Universidade do Estado de Santa Catarina (UDESC).'
 
 exports.crypto_key = 'e981739hdkdfasdfknasdfiu9823oa0sdf9023o4f'
+exports.locale = 'pt-br'

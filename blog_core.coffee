@@ -4,7 +4,6 @@ config = require('./config')
 _ = require('underscore')._
 async = require("async")
 
-
 #UTILS
 
 TrimStr = (str) ->
