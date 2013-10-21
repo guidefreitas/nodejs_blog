@@ -1,3 +1,5 @@
+core = require('../../blog_core')
+
 exports.index = (req, res) ->
   core.Message.find().exec((err, messages) ->
     if(err)

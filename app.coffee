@@ -110,10 +110,10 @@ admin_media = require('./routes/admin/media')
 admin_projects = require('./routes/admin/projects')
 admin_posts = require('./routes/admin/posts')
 admin_messages = require('./routes/admin/messages')
+
 app.use(app.router)
 
 app.get('/', routes.index)
-app.get('/:id', posts.show_post)
 app.get('/search', search.index)
 app.get('/rss.xml', rss.index)
 app.get('/about', about.index)
@@ -139,6 +139,7 @@ app.get('/admin/posts/edit/:id', isAdmin, admin_posts.edit_post)
 app.put('/admin/posts/:id', isAdmin, admin_posts.update_post)
 app.del('/admin/posts/:id', isAdmin, admin_posts.remove_post)
 app.get('/admin/messages', isAdmin, admin_messages.index)
+app.get('/:id', posts.show_post)
 
 # app.get('/page/:id' , (req,res) ->
 #   id = parseInt(req.params.id)
@@ -172,9 +173,9 @@ app.get('/admin/messages', isAdmin, admin_messages.index)
 #   )
 # )
 
-app.get('*', (req, res) ->
-  res.redirect('/')
-);
+# app.get('*', (req, res) ->
+#   res.redirect('/')
+# );
 
 port = process.env.PORT || 3000;
 app.listen(port)
