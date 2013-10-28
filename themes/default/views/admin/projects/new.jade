@@ -1,0 +1,11 @@
+extends ../../admin_layout
+
+block content
+  article.admin-page
+    header
+    div.page
+      - if (notice)
+        p =notice
+      form.new-form(name='project', method='post', action='/admin/projects')
+        h1 New Project
+        include project_form

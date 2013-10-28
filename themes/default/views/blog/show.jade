@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+	div.blog
+		header
+			include ../search_field
+				
+		article.post
+			h2= post.title
+			p.meta
+				!= moment(post.date).format('LL')
+				a.author(href='/sobre')
+					img(src='/img/about/gui.png', width='68', height='68')
+			include ../post_tags
+			div.article_content
+				!= md.parse(post.body)
+			

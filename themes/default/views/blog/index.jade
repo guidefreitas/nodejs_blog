@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+	div#blog-main-page.blog
+		header
+			include ../search_field
+		
+		div.main_posts
+			- if (posts.length == 0)
+				article.post
+					p Nenhum post encontrado
+			- else
+				- each post in posts
+					article.post
+						h2 
+							a(href='/'+post.urlid)!= post.title
+						p.meta
+							!= moment(post.date).format('LL')
+							
+						include ../post_tags
+
+						div.article_content
+							!= md.parse(post.body)
+				
+				- if (posts.length == 10)
+					div.nav_botton
+						div.old_posts_nav_link
+							a(href='/page/' + ( (!req.params.id) ? 2 : (parseInt(req.params.id) + 1) ))
+								img.icon(src='/img/back.png') 
+								span.label!= __('Old Posts')
+
+		include ../sidebar
+										
+									
+										

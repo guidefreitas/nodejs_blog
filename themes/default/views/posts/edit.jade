@@ -1,0 +1,20 @@
+extends ../admin_layout
+
+block content
+	article
+		header
+		div.post
+			- if (notice)
+				p =notice
+			form#new-post-form(name='post', method='post', action='/admin/posts/' + post._id)
+				input(type='hidden', name='_method', value='PUT')
+				input(type='hidden', value=token)
+				fieldset.input-field
+					input#title-field(name='post[title]', placeholder='Title', type='text', size='40', value=post.title)
+				fieldset.input-field
+					textarea#text(name='post[body]', placeholder='Text', type='text', cols='40', rows='20')!= post.body
+				fieldset.input-field
+					input#tags-field(name='post[tags]', placeholder='Tags', type='text',value=post.tags)
+
+				fieldset
+					input(type="submit", class='button-normal', name='save', value='Save')

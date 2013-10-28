@@ -19,3 +19,4 @@ exports.author_bio_description = 'Bacharel em Sistemas de Informação, com espe
 
 exports.crypto_key = 'e981739hdkdfasdfknasdfiu9823oa0sdf9023o4f'
 exports.locale = 'pt-br'
+exports.theme = 'default'

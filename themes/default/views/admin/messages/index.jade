@@ -1,0 +1,21 @@
+extends ../../admin_layout
+
+block content
+	article.admin-page
+		header
+		div#admin-messages.post
+			- if (notice)
+				p =notice
+
+			h1 Messages
+
+			div.messages-list
+				ul
+					- each message in messages
+						li
+							h2
+								a(href='mailto:' + message.email)!= message.name + ' - ' + message.email
+							div.meta
+								!= moment(message.date).format('LL')
+							p
+								!= message.body

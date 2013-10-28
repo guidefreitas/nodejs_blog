@@ -15,12 +15,14 @@ app.use(express.methodOverride());
 app.use(express.cookieParser());
 app.use(express.session({ secret: core.config.crypto_key }));
 
-app.use require('connect-assets')()
+assets_dir = "./themes/" + core.config.theme + "/assets"
+app.use require('connect-assets')(src:assets_dir, build:true)
 app.use(express.static('./public'))
 app.use(express.responseTime())
 #app.use(gzippo.staticGzip(__dirname + '/public'))
 app.set('view engine', 'jade')
-app.set('views', './views')
+views_dir = "./themes/" + core.config.theme + "/views"
+app.set('views', views_dir)
 app.use(gzippo.compress())
 app.use(express.session({
   secret: core.config.crypto_key, 

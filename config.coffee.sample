@@ -18,3 +18,4 @@ exports.author_skype_url = 'callto://skype_author_username'
 exports.author_bio_description = 'Blog owner biography/description'
 
 exports.crypto_key = 'e981739hdkdfasdfknasdfiu9823oa0sdf9023o4f' #change it in production
+exports.theme = 'default'

@@ -1,0 +1,22 @@
+input(type='hidden', value=token)
+fieldset.input-field
+  input.field(name='project[name]', placeholder='Project Name', type='text', size='40', value=project.name)
+fieldset.input-field
+  textarea.field(name='project[description]', placeholder='Description', type='text', cols='40', rows='20')!= project.description
+fieldset.input-field
+  input.field(name='project[project_image_url]', placeholder='Project Image Link', type='text',value=project.project_image_url)
+fieldset.input-field
+  input.field(name='project[download_link]', placeholder='Download Link', type='text',value=project.download_link)
+fieldset.input-field
+  input.field(name='project[ios_app_store_link]', placeholder='iOS App Store Link', type='text',value=project.ios_app_store_link)
+fieldset.input-field
+  input.field(name='project[mac_app_store_link]', placeholder='Mac App Store Link', type='text',value=project.mac_app_store_link)
+fieldset.input-field
+  input.field(name='project[marketplace_link]', placeholder='Microsoft Marketplace Link', type='text',value=project.marketplace_link)
+fieldset.input-field
+  input.field(name='project[google_play_link]', placeholder='Google Play Link', type='text',value=project.google_play_link)
+fieldset.input-field
+  input.field(name='project[website_link]', placeholder='Website Link', type='text',value=project.website_link)
+
+fieldset
+  input(type="submit", class='button-normal', name='save', value='Save')

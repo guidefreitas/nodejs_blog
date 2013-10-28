@@ -1,0 +1,11 @@
+!!! 5
+html(lang="en")
+	head
+		include common_head
+	body.site-page
+		img#canvasSource(src='img/bg2.jpg', alt='Canvas Source')
+
+		canvas.blur#bgcanvas
+		div.wrapper
+			include menu_admin
+			block content

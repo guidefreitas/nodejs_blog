@@ -1,0 +1,19 @@
+extends ../../admin_layout
+
+block content
+	article.admin-page
+		header
+		div#admin-posts.post
+			- if (notice)
+				p =notice
+
+			a(href='/admin/posts/new') New post
+
+			div.posts-list
+				ul
+					- each post in posts
+						li
+							h2
+								a(href='/admin/posts/' + post._id)!= post.title
+							div.meta
+								!= moment(post.date).format('LL')

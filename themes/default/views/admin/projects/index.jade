@@ -1,0 +1,17 @@
+extends ../../admin_layout
+
+block content
+  article.admin-page
+    header
+    div.page
+      - if (notice)
+        p =notice
+
+      a(href='/admin/projects/new') New project
+
+      div.projects-list
+        ul
+          - each project in projects
+            li
+              h2
+                a(href='/admin/projects/' + project._id)!= project.name

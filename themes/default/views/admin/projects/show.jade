@@ -1,0 +1,17 @@
+extends ../../admin_layout
+
+block content
+  article.admin-page
+    header
+    div.page
+      h2= project.name
+      p.meta
+      p!= md.parse(project.description)
+
+      div.horizontal_menu
+        div.menu_item
+          a.button-edit(href='/admin/projects/edit/' + project._id) Edit
+        div.menu_item
+          form(name='project', method='post', action='/admin/projects/' + project._id)
+            input(type='hidden', name='_method', value='DELETE')
+            input(type="submit", class='button-delete', name='delete', value='Delete')

@@ -1,0 +1,55 @@
+extends ../layout
+
+block content
+	article#about
+		header
+			include ../search_field
+
+		div#about-profile-area
+			div.profile
+				div#image
+					img.profile-image(src='/img/about/about.png')
+				div.profile-description
+					p!= config.author_bio_description
+
+
+					ul.social
+						li 
+							a(href=config.author_facebook_url)
+								img.social-icon(src='/img/icons/facebook.png')
+						li 
+							a(href=config.author_twitter_url)
+								img.social-icon(src='/img/icons/twitter.png')
+						li 
+							a(href=config.author_linkedin_url)
+								img.social-icon(src='/img/icons/linkedin.png')
+						li 
+							a(href=config.author_github_url)
+								img.social-icon(src='/img/icons/github.png')
+						li 
+							a(href=config.author_skype_url)
+								img.social-icon(src='/img/icons/skype.png')
+
+			div.contact
+				form
+
+		div#contact-form-area
+			form.contact-form(name='contact', method='post', action='/about/message')
+				fieldset
+					label Name
+					span
+						input(name='name', class='text-input')
+				fieldset
+					label Email	
+					span
+						input(name='email', class='text-input')
+
+
+
+				fieldset
+					label Message	
+					span
+						textarea#text(name='message', placeholder='', type='text', cols='40', rows='6')
+
+				fieldset
+					input(type="submit", class='button-normal', name='send', value='Send')

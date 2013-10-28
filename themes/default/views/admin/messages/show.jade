@@ -1,0 +1,19 @@
+extends ../../admin_layout
+
+block content
+	article.blog
+		div.post	
+			section
+				h2= message.name
+				p.meta
+					!= moment(message.date).format('LL')
+				
+				p!= message.body
+
+				a.button-edit(href='/admin/messages/edit/' + message._id) Edit
+				form(name='post', method='post', action='/admin/messages/' + message._id)
+					input(type='hidden', name='_method', value='DELETE')
+					input(type="submit", class='button-delete', name='delete', value='Delete')
+
+
+				

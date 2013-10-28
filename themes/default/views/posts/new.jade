@@ -1,0 +1,10 @@
+extends ../admin_layout
+
+block content
+  article
+    header
+    div.post
+      - if (notice)
+        p =notice
+      form#new-post-form(name='post', method='post', action='/admin/posts')
+        include post_form

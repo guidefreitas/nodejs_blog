@@ -1,0 +1,22 @@
+extends ../../admin_layout
+
+block content
+	article.blog
+		div.post
+			h2= post.title
+			p.meta
+				!= moment(post.date).format('LL')
+				a.author(href='/sobre')
+					img(src='/img/about/gui.png', width='68', height='68')
+			p!= md.parse(post.body)
+
+			div.horizontal_menu
+				div.menu_item
+					a.button-edit(href='/admin/posts/edit/' + post._id) Edit
+				div.menu_item
+					form(name='post', method='post', action='/admin/posts/' + post._id)
+						input(type='hidden', name='_method', value='DELETE')
+						input(type="submit", class='button-delete', name='delete', value='Delete')
+
+
+				
