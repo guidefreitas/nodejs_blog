@@ -11,7 +11,7 @@
     "jade"   :  ">=0.26.3",
     "express" :  ">=2.5.x",
     "connect-assets" : ">=2.2.1",
-    "less" : ">=1.3.0",
+    "less" : ">=1.4.0",
     "coffee-script" : ">=1.3.3",
     "formidable" : "*",
     "zlib" : "*",
