@@ -1,6 +1,0 @@
-- if(post.tags)
-	ul#tags.tags
-		- each tag in post.tags.split(',')
-			li
-				a(href='/search?tag=' + TrimStr(tag), rel='prerender')!= TrimStr(tag)
-		
