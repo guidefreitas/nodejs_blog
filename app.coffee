@@ -16,7 +16,7 @@ app.use(express.cookieParser());
 app.use(express.session({ secret: core.config.crypto_key }));
 
 assets_dir = "./themes/" + core.config.theme + "/assets/"
-app.use require('connect-assets')(src:assets_dir, build:true)
+app.use require('connect-assets')(src:assets_dir)
 app.use(express.static('./public'))
 app.use(express.responseTime())
 #app.use(gzippo.staticGzip(__dirname + '/public'))
